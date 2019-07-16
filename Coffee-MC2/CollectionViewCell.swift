@@ -13,6 +13,7 @@ class CollectionViewCell: GeminiCell{
     
     
     
+    @IBOutlet weak var backgroundMenuView: UIView!
     @IBOutlet weak var cupMenuImage: UIImageView!
     @IBOutlet weak var latteArtMenuTitle: UILabel!
     @IBOutlet weak var latteArtMenuSubtitle: UILabel!
@@ -21,8 +22,9 @@ class CollectionViewCell: GeminiCell{
     func style(){
         
     }
-//    func setCell(imageNamed: String) {
-//        cupMenuImage.image = UIImage(named: imageNamed)
-//    }
+    
+    func setCell(imageNamed: String) {
+        cupMenuImage.image = UIImage(named: imageNamed)
+    }
     
 }
