@@ -7,16 +7,22 @@
 //
 
 import UIKit
+import Gemini
 
-class CollectionViewCell: UICollectionViewCell {
+class CollectionViewCell: GeminiCell{
     
     
-    @IBOutlet weak var backgroundMenuImage: UIImageView!
+    
     @IBOutlet weak var cupMenuImage: UIImageView!
     @IBOutlet weak var latteArtMenuTitle: UILabel!
-    @IBOutlet weak var starImage1: UIImageView!
-    @IBOutlet weak var starImage2: UIImageView!
-    @IBOutlet weak var starImage3: UIImageView!
+    @IBOutlet weak var latteArtMenuSubtitle: UILabel!
     
+    
+    func style(){
+        
+    }
+//    func setCell(imageNamed: String) {
+//        cupMenuImage.image = UIImage(named: imageNamed)
+//    }
     
 }
