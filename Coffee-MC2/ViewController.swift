@@ -12,7 +12,7 @@ import Gemini
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var menuImageData = "MenuBg"
-    var latteImageData = ["HeartLatteMenu", "TulipLatteMenu", "TulipLatteMenu"]
+    var latteImageData = ["HeartLatteMenu", "TulipLatteMenu", "RosettaLatteMenu"]
     var titleData = ["Heart", "Latte", "Rosetta"]
     var subtitleData = ["Easy", "Medium", "Hard"]
     var starFilledData = "StarFilled"
@@ -27,7 +27,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         menuCollectionView.dataSource = self
         
         menuCollectionView.showsVerticalScrollIndicator = false
-        menuCollectionView.showsHorizontalScrollIndicator = false
+        
+//        menuCollectionView.showsHorizontalScrollIndicator = false
         
         // Configure animations
         menuCollectionView.gemini
@@ -52,6 +53,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.cupMenuImage.image = UIImage(named: latteImageData[indexPath.row])
        cell.latteArtMenuTitle.text = titleData [indexPath.item]
         cell.latteArtMenuSubtitle.text = subtitleData[indexPath.item]
+        cell.backgroundMenuView.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
+        cell.backgroundMenuView.layer.cornerRadius = 25
         cell.style()
         cell.backgroundColor = UIColor.red
         
@@ -82,10 +85,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         generator.impactOccurred()
     }
     
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        <#code#>
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
     }
@@ -98,11 +97,44 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return 0.0
     }
     
-//    func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
-//        <#code#>
-//    }
-    
-    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
+    {
+        
+//        let pageWidht:CGFloat = 200.0 + 30.0
+//        let currentOffset = scrollView.contentOffset.x
+//        let targetOffset = CGFloat(targetContentOffset.pointee.x)
+//        var newTargetOffset:CGFloat = 0.0
+//
+//        if targetOffset > currentOffset {
+//            newTargetOffset = CGFloat(ceilf(Float((currentOffset / pageWidht) * pageWidht)))
+//        }
+//        else {
+//            newTargetOffset = CGFloat(floorf(Float((currentOffset / pageWidht) * pageWidht)))
+//        }
+//
+//        if newTargetOffset < 0.0 {
+//            newTargetOffset = 0.0
+//        }
+//        else if newTargetOffset > scrollView.contentSize.width {
+//            newTargetOffset = scrollView.contentSize.width
+//        }
+//        targetContentOffset.pointee = CGPoint(x: newTargetOffset, y: 0.0)
+        
+        
+        //interest
+        let layout = self.menuCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+
+        var offset = targetContentOffset.pointee
+
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+
+        let roundedIndex = round(index)
+
+        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing / 1.38 - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width * 0.75
@@ -110,6 +142,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         return CGSize(width: width, height: height)
     }
+    
 
 }
 
