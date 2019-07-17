@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		120AA7F0B751860F900A83253E0CBDEA /* Gemini-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FFC964C9BFD2D93DBC474CE24B4C82 /* Gemini-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18B77D0BBFD7A7B30D1107B7C33B49BE /* CubeAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E70F00276E3BBE1766379C3834E860 /* CubeAnimatable.swift */; };
+		1BD73256AAA0129BC2EB58C43A2FF41D /* UIAppearanceAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C9C0E8B9E6139A1EE35FB58E483C /* UIAppearanceAnimatable.swift */; };
+		261F70F54820D6F556E1719B473D07BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		2CCFB120311FC3620665ADA25F90266B /* Pods-Coffee-MC2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D40103A6C1EC71C00E45A789E39669B6 /* Pods-Coffee-MC2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40F5225951E513F7618743C83927669F /* GeminiAnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591287F1463A54181E5617155B1B17D7 /* GeminiAnimationModel.swift */; };
+		427EA589B1206FD066B5CE6A696243A7 /* EasingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADE74E5AB781B5F99A32E6E9BEF9AD /* EasingFunction.swift */; };
+		491BAEF2DFE12A8D172A02E3D63F9DE2 /* Gemini-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 449E74ECF700454C816284C2CA46190B /* Gemini-dummy.m */; };
+		4C78DA26710EC30382FF9F23D16E687A /* CustomAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27B48B6CD60272836B02110DA8E37E /* CustomAnimatable.swift */; };
+		704D9616CDFB1B660ADDD8B4278901F0 /* CircleRotateAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E41BE858AD08FFD70EAD087FEADF542 /* CircleRotateAnimatable.swift */; };
+		73250BDF2DAFDD7712F19965921BC486 /* PitchRotationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3309F7630B2507474B3E1DA9608988 /* PitchRotationAnimatable.swift */; };
+		75FD0F45441660C8C85ED7F4FE8A9264 /* YawRotationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE973BB081BB253F38F6839AB66198A5 /* YawRotationAnimatable.swift */; };
+		7F95CAF222327B1E9C33F36357A7D746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		8DECFC509EEFF6AFE81CA5D9C918B720 /* Pods-Coffee-MC2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A8A42A3FE48E7C9C47FCB5A42DC781 /* Pods-Coffee-MC2-dummy.m */; };
+		9B70829D7120C51B2EEC9292F5907504 /* ScaleAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6A595FE55B5679EAAA6C36043BC1D /* ScaleAnimatable.swift */; };
+		AB86C8FB8F6E966E96392CB629182213 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333BBB7CA882E8E113B215BCE0B91FF /* UIViewExtension.swift */; };
+		BACDF752C560E36C0ADE5974A93DF0F3 /* RollRotationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D5A08EBF2E53D02B64989579E1FE26 /* RollRotationAnimatable.swift */; };
+		BF8497F96BA43599A84F9070DAA213FB /* GeminiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AA60CA30AE37DA0123B104A9A09447 /* GeminiCell.swift */; };
+		D1CCB185721013A37421C244B5E8225F /* EasingAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E707546797EE7BAF20673827861FA /* EasingAnimatable.swift */; };
+		FBF58226D25F0166D576E5DAFCD31351 /* GeminiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36F71D1C0F03E797A95AF7A1091E04 /* GeminiCollectionView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC331E6FB02807229F9E54F0B78F84F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E8CF3AAD78018929D438EEC4605539F;
+			remoteInfo = Gemini;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F36F71D1C0F03E797A95AF7A1091E04 /* GeminiCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeminiCollectionView.swift; path = Gemini/GeminiCollectionView.swift; sourceTree = "<group>"; };
+		16091A1C73A4A27304983FC83CF1C382 /* Pods-Coffee-MC2-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Coffee-MC2-acknowledgements.plist"; sourceTree = "<group>"; };
+		196194F6C79D2A5AF7134EEC6EF1D819 /* Gemini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gemini.framework; path = Gemini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E41BE858AD08FFD70EAD087FEADF542 /* CircleRotateAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleRotateAnimatable.swift; path = Gemini/CircleRotateAnimatable.swift; sourceTree = "<group>"; };
+		21AA60CA30AE37DA0123B104A9A09447 /* GeminiCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeminiCell.swift; path = Gemini/GeminiCell.swift; sourceTree = "<group>"; };
+		2333BBB7CA882E8E113B215BCE0B91FF /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Gemini/UIViewExtension.swift; sourceTree = "<group>"; };
+		29D5A08EBF2E53D02B64989579E1FE26 /* RollRotationAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RollRotationAnimatable.swift; path = Gemini/RollRotationAnimatable.swift; sourceTree = "<group>"; };
+		2B18177ADF4C2B94A49439512AB45576 /* Gemini.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Gemini.xcconfig; sourceTree = "<group>"; };
+		449E74ECF700454C816284C2CA46190B /* Gemini-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Gemini-dummy.m"; sourceTree = "<group>"; };
+		44A5ECE4776B89337FE23CF8A369A4BE /* Pods-Coffee-MC2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Coffee-MC2.debug.xcconfig"; sourceTree = "<group>"; };
+		56FFC964C9BFD2D93DBC474CE24B4C82 /* Gemini-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gemini-umbrella.h"; sourceTree = "<group>"; };
+		591287F1463A54181E5617155B1B17D7 /* GeminiAnimationModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeminiAnimationModel.swift; path = Gemini/GeminiAnimationModel.swift; sourceTree = "<group>"; };
+		74A40D59449B7E096284BF5F4BAEC54E /* Pods-Coffee-MC2-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Coffee-MC2-Info.plist"; sourceTree = "<group>"; };
+		7AEA3D8722FBBF5876B05CC2DE178467 /* Gemini-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gemini-prefix.pch"; sourceTree = "<group>"; };
+		84E70F00276E3BBE1766379C3834E860 /* CubeAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CubeAnimatable.swift; path = Gemini/CubeAnimatable.swift; sourceTree = "<group>"; };
+		86F6A595FE55B5679EAAA6C36043BC1D /* ScaleAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScaleAnimatable.swift; path = Gemini/ScaleAnimatable.swift; sourceTree = "<group>"; };
+		8BC42348453A1F48AF123121ABA9B3B2 /* Pods-Coffee-MC2-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Coffee-MC2-acknowledgements.markdown"; sourceTree = "<group>"; };
+		94A2C9C0E8B9E6139A1EE35FB58E483C /* UIAppearanceAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIAppearanceAnimatable.swift; path = Gemini/UIAppearanceAnimatable.swift; sourceTree = "<group>"; };
+		98B6CBBDA57A915652ED3BE63D45E193 /* Pods-Coffee-MC2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Coffee-MC2.release.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A765915A1143AB036CC3B54E493896B5 /* Gemini-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Gemini-Info.plist"; sourceTree = "<group>"; };
+		AE3309F7630B2507474B3E1DA9608988 /* PitchRotationAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PitchRotationAnimatable.swift; path = Gemini/PitchRotationAnimatable.swift; sourceTree = "<group>"; };
+		AF158B7915B53BC246B58E69AE5DB3B0 /* Gemini.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Gemini.modulemap; sourceTree = "<group>"; };
+		B7A8A42A3FE48E7C9C47FCB5A42DC781 /* Pods-Coffee-MC2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Coffee-MC2-dummy.m"; sourceTree = "<group>"; };
+		BB916CCCA080F1FD29FC9D7110322E98 /* Pods_Coffee_MC2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Coffee_MC2.framework; path = "Pods-Coffee-MC2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D40103A6C1EC71C00E45A789E39669B6 /* Pods-Coffee-MC2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Coffee-MC2-umbrella.h"; sourceTree = "<group>"; };
+		D611237BED84B9E0732AEAE16DF6AD93 /* Pods-Coffee-MC2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Coffee-MC2.modulemap"; sourceTree = "<group>"; };
+		DE27B48B6CD60272836B02110DA8E37E /* CustomAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAnimatable.swift; path = Gemini/CustomAnimatable.swift; sourceTree = "<group>"; };
+		ED0E707546797EE7BAF20673827861FA /* EasingAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasingAnimatable.swift; path = Gemini/EasingAnimatable.swift; sourceTree = "<group>"; };
+		EDADE74E5AB781B5F99A32E6E9BEF9AD /* EasingFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasingFunction.swift; path = Gemini/EasingFunction.swift; sourceTree = "<group>"; };
+		EE973BB081BB253F38F6839AB66198A5 /* YawRotationAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YawRotationAnimatable.swift; path = Gemini/YawRotationAnimatable.swift; sourceTree = "<group>"; };
+		F501491004BA8E0655A3DC96894183B1 /* Pods-Coffee-MC2-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Coffee-MC2-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35CBD9FD688DA1CB3055AE401D25477E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F95CAF222327B1E9C33F36357A7D746 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39F79A62BD76657B0DB7D7A5AADEFE24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				261F70F54820D6F556E1719B473D07BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11AD585B665A329C24D85214F3331AE8 /* Gemini */ = {
+			isa = PBXGroup;
+			children = (
+				1E41BE858AD08FFD70EAD087FEADF542 /* CircleRotateAnimatable.swift */,
+				84E70F00276E3BBE1766379C3834E860 /* CubeAnimatable.swift */,
+				DE27B48B6CD60272836B02110DA8E37E /* CustomAnimatable.swift */,
+				ED0E707546797EE7BAF20673827861FA /* EasingAnimatable.swift */,
+				EDADE74E5AB781B5F99A32E6E9BEF9AD /* EasingFunction.swift */,
+				591287F1463A54181E5617155B1B17D7 /* GeminiAnimationModel.swift */,
+				21AA60CA30AE37DA0123B104A9A09447 /* GeminiCell.swift */,
+				0F36F71D1C0F03E797A95AF7A1091E04 /* GeminiCollectionView.swift */,
+				AE3309F7630B2507474B3E1DA9608988 /* PitchRotationAnimatable.swift */,
+				29D5A08EBF2E53D02B64989579E1FE26 /* RollRotationAnimatable.swift */,
+				86F6A595FE55B5679EAAA6C36043BC1D /* ScaleAnimatable.swift */,
+				94A2C9C0E8B9E6139A1EE35FB58E483C /* UIAppearanceAnimatable.swift */,
+				2333BBB7CA882E8E113B215BCE0B91FF /* UIViewExtension.swift */,
+				EE973BB081BB253F38F6839AB66198A5 /* YawRotationAnimatable.swift */,
+				B8CF2A27598666D7902793A6D7F8BA11 /* Support Files */,
+			);
+			name = Gemini;
+			path = Gemini;
+			sourceTree = "<group>";
+		};
+		7856A93C4961AD6697457A3C4D637766 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11AD585B665A329C24D85214F3331AE8 /* Gemini */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		80958D7E4FF986F0F6EA851B9365C535 /* Pods-Coffee-MC2 */ = {
+			isa = PBXGroup;
+			children = (
+				D611237BED84B9E0732AEAE16DF6AD93 /* Pods-Coffee-MC2.modulemap */,
+				8BC42348453A1F48AF123121ABA9B3B2 /* Pods-Coffee-MC2-acknowledgements.markdown */,
+				16091A1C73A4A27304983FC83CF1C382 /* Pods-Coffee-MC2-acknowledgements.plist */,
+				B7A8A42A3FE48E7C9C47FCB5A42DC781 /* Pods-Coffee-MC2-dummy.m */,
+				F501491004BA8E0655A3DC96894183B1 /* Pods-Coffee-MC2-frameworks.sh */,
+				74A40D59449B7E096284BF5F4BAEC54E /* Pods-Coffee-MC2-Info.plist */,
+				D40103A6C1EC71C00E45A789E39669B6 /* Pods-Coffee-MC2-umbrella.h */,
+				44A5ECE4776B89337FE23CF8A369A4BE /* Pods-Coffee-MC2.debug.xcconfig */,
+				98B6CBBDA57A915652ED3BE63D45E193 /* Pods-Coffee-MC2.release.xcconfig */,
+			);
+			name = "Pods-Coffee-MC2";
+			path = "Target Support Files/Pods-Coffee-MC2";
+			sourceTree = "<group>";
+		};
+		9B047867B0B4F7D5B622917ECF6AE570 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				80958D7E4FF986F0F6EA851B9365C535 /* Pods-Coffee-MC2 */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A061E213C5F691C3F49FDA55F631C0C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				196194F6C79D2A5AF7134EEC6EF1D819 /* Gemini.framework */,
+				BB916CCCA080F1FD29FC9D7110322E98 /* Pods_Coffee_MC2.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8CF2A27598666D7902793A6D7F8BA11 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF158B7915B53BC246B58E69AE5DB3B0 /* Gemini.modulemap */,
+				2B18177ADF4C2B94A49439512AB45576 /* Gemini.xcconfig */,
+				449E74ECF700454C816284C2CA46190B /* Gemini-dummy.m */,
+				A765915A1143AB036CC3B54E493896B5 /* Gemini-Info.plist */,
+				7AEA3D8722FBBF5876B05CC2DE178467 /* Gemini-prefix.pch */,
+				56FFC964C9BFD2D93DBC474CE24B4C82 /* Gemini-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Gemini";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				7856A93C4961AD6697457A3C4D637766 /* Pods */,
+				A061E213C5F691C3F49FDA55F631C0C2 /* Products */,
+				9B047867B0B4F7D5B622917ECF6AE570 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0FD2C312F014035986A47557ED47B4EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				120AA7F0B751860F900A83253E0CBDEA /* Gemini-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E479922A8D6300BDA45343E4D067AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CCFB120311FC3620665ADA25F90266B /* Pods-Coffee-MC2-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7E8CF3AAD78018929D438EEC4605539F /* Gemini */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F97BE090DBB6F0173E18D92038B75A /* Build configuration list for PBXNativeTarget "Gemini" */;
+			buildPhases = (
+				0FD2C312F014035986A47557ED47B4EF /* Headers */,
+				2CF9D704EA9BCBC0B4547C586C10CBF1 /* Sources */,
+				39F79A62BD76657B0DB7D7A5AADEFE24 /* Frameworks */,
+				C0F0D7DB2EB44F68B60F310C977C442A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gemini;
+			productName = Gemini;
+			productReference = 196194F6C79D2A5AF7134EEC6EF1D819 /* Gemini.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D4D91A060EFE1CD8EBB33116BEC2C64C /* Pods-Coffee-MC2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B67231D9C59F8B0403392568818ABEFE /* Build configuration list for PBXNativeTarget "Pods-Coffee-MC2" */;
+			buildPhases = (
+				F5E479922A8D6300BDA45343E4D067AA /* Headers */,
+				22C80695A382C0D6BC3F86F909C67FE1 /* Sources */,
+				35CBD9FD688DA1CB3055AE401D25477E /* Frameworks */,
+				92FCB88084B848422AE57D92B8B16CE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42140B78169AD089FB04483513E86BED /* PBXTargetDependency */,
+			);
+			name = "Pods-Coffee-MC2";
+			productName = "Pods-Coffee-MC2";
+			productReference = BB916CCCA080F1FD29FC9D7110322E98 /* Pods_Coffee_MC2.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = A061E213C5F691C3F49FDA55F631C0C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E8CF3AAD78018929D438EEC4605539F /* Gemini */,
+				D4D91A060EFE1CD8EBB33116BEC2C64C /* Pods-Coffee-MC2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92FCB88084B848422AE57D92B8B16CE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F0D7DB2EB44F68B60F310C977C442A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22C80695A382C0D6BC3F86F909C67FE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DECFC509EEFF6AFE81CA5D9C918B720 /* Pods-Coffee-MC2-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CF9D704EA9BCBC0B4547C586C10CBF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704D9616CDFB1B660ADDD8B4278901F0 /* CircleRotateAnimatable.swift in Sources */,
+				18B77D0BBFD7A7B30D1107B7C33B49BE /* CubeAnimatable.swift in Sources */,
+				4C78DA26710EC30382FF9F23D16E687A /* CustomAnimatable.swift in Sources */,
+				D1CCB185721013A37421C244B5E8225F /* EasingAnimatable.swift in Sources */,
+				427EA589B1206FD066B5CE6A696243A7 /* EasingFunction.swift in Sources */,
+				491BAEF2DFE12A8D172A02E3D63F9DE2 /* Gemini-dummy.m in Sources */,
+				40F5225951E513F7618743C83927669F /* GeminiAnimationModel.swift in Sources */,
+				BF8497F96BA43599A84F9070DAA213FB /* GeminiCell.swift in Sources */,
+				FBF58226D25F0166D576E5DAFCD31351 /* GeminiCollectionView.swift in Sources */,
+				73250BDF2DAFDD7712F19965921BC486 /* PitchRotationAnimatable.swift in Sources */,
+				BACDF752C560E36C0ADE5974A93DF0F3 /* RollRotationAnimatable.swift in Sources */,
+				9B70829D7120C51B2EEC9292F5907504 /* ScaleAnimatable.swift in Sources */,
+				1BD73256AAA0129BC2EB58C43A2FF41D /* UIAppearanceAnimatable.swift in Sources */,
+				AB86C8FB8F6E966E96392CB629182213 /* UIViewExtension.swift in Sources */,
+				75FD0F45441660C8C85ED7F4FE8A9264 /* YawRotationAnimatable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42140B78169AD089FB04483513E86BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Gemini;
+			target = 7E8CF3AAD78018929D438EEC4605539F /* Gemini */;
+			targetProxy = DC331E6FB02807229F9E54F0B78F84F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0693F0906C8473831FCA63F33A771314 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B18177ADF4C2B94A49439512AB45576 /* Gemini.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Gemini/Gemini-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Gemini/Gemini-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Gemini/Gemini.modulemap";
+				PRODUCT_MODULE_NAME = Gemini;
+				PRODUCT_NAME = Gemini;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		84A06F28E9E7D9EB0A9B476A8668FD60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B941319AC979B670AB9034C00F09FCA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98B6CBBDA57A915652ED3BE63D45E193 /* Pods-Coffee-MC2.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Coffee-MC2/Pods-Coffee-MC2-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Coffee-MC2/Pods-Coffee-MC2.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D0FE574C7B3479C6425BC136AA57D8C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E2FF2001B065BD7F1369DD3421684B9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B18177ADF4C2B94A49439512AB45576 /* Gemini.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Gemini/Gemini-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Gemini/Gemini-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Gemini/Gemini.modulemap";
+				PRODUCT_MODULE_NAME = Gemini;
+				PRODUCT_NAME = Gemini;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EB8EFC222590340376B513628EC1AAEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44A5ECE4776B89337FE23CF8A369A4BE /* Pods-Coffee-MC2.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Coffee-MC2/Pods-Coffee-MC2-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Coffee-MC2/Pods-Coffee-MC2.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FE574C7B3479C6425BC136AA57D8C2 /* Debug */,
+				84A06F28E9E7D9EB0A9B476A8668FD60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F97BE090DBB6F0173E18D92038B75A /* Build configuration list for PBXNativeTarget "Gemini" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0693F0906C8473831FCA63F33A771314 /* Debug */,
+				E2FF2001B065BD7F1369DD3421684B9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B67231D9C59F8B0403392568818ABEFE /* Build configuration list for PBXNativeTarget "Pods-Coffee-MC2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8EFC222590340376B513628EC1AAEF /* Debug */,
+				B941319AC979B670AB9034C00F09FCA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
