@@ -118,19 +118,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="TJ0-Bc-dt6"/>
+                    <navigationItem key="navigationItem" id="heQ-bh-Ooc"/>
                     <connections>
                         <outlet property="menuCollectionView" destination="Q4D-22-DuG" id="dSL-ZM-Gs4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="126.5625"/>
         </scene>
         <!--Art Controller-->
         <scene sceneID="QoW-xL-v9N">
             <objects>
-                <viewController id="1rA-ta-crY" customClass="ArtController" customModule="Coffee_MC2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="artTutorial" id="1rA-ta-crY" customClass="ArtController" customModule="Coffee_MC2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TxQ-Rk-4CE" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rvd-RQ-Pfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788" y="127"/>
+            <point key="canvasLocation" x="2697.1014492753625" y="126.5625"/>
         </scene>
     </scenes>
     <resources>

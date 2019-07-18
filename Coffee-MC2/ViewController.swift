@@ -9,8 +9,12 @@
 import UIKit
 import Gemini
 
+
+
+
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+
     
     var menuImageData = "MenuBg"
     var latteImageData = ["HeartLatteMenu", "TulipLatteMenu", "RosettaLatteMenu"]
@@ -23,6 +27,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         contentInset()
         
@@ -202,5 +207,29 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return CGSize(width: width, height: height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "artTutorial") as! ArtController
+        
+        
+        controller.getArt = titleData[indexPath.row]
+        controller.setFlag = indexPath.row
+        
+//        self.navigationController?.show(controller, sender: nil)
+        
+        transitionRight()
+        self.present(controller, animated: false, completion: nil)
+        
+    }
+    
+    func transitionRight(){
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition,forKey: kCATransition)
+    }
     
 }
