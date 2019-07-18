@@ -162,8 +162,16 @@ class ArtTutorial: SKScene {
         motionManager.stopDeviceMotionUpdates()
     }
     
+    func getPassedData(){
+        
+    }
+    
     
     
 }
 
+protocol getData {
+    func getArt(_ text: String)
+    
+}
 
