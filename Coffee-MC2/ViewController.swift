@@ -11,6 +11,7 @@ import Gemini
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    
     var menuImageData = "MenuBg"
     var latteImageData = ["HeartLatteMenu", "TulipLatteMenu", "RosettaLatteMenu"]
     var titleData = ["Heart", "Latte", "Rosetta"]
@@ -46,17 +47,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return titleData.count
     }
+    //    var colors = [#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1),#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1),#colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath) as! CollectionViewCell
-        
         cell.cupMenuImage.image = UIImage(named: latteImageData[indexPath.row])
         cell.latteArtMenuTitle.text = titleData [indexPath.item]
         cell.latteArtMenuSubtitle.text = subtitleData[indexPath.item]
         cell.backgroundMenuView.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
         cell.backgroundMenuView.layer.cornerRadius = 25
         cell.backgroundMenuView.layer.masksToBounds = true
+        //        cell.backgroundColor = colors[indexPath.row]
         cell.style()
         //        cell.backgroundColor = UIColor.red
         
@@ -69,6 +71,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     /**Configure content inset in collection view*/
     func contentInset() {
         menuCollectionView.contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+        
     }
     
     //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -97,15 +100,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.prepare()
-        generator.impactOccurred()
+        //        let generator = UIImpactFeedbackGenerator(style: .medium)
+        //        generator.prepare()
+        //        generator.impactOccurred()
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        //        let generator = UIImpactFeedbackGenerator(style: .light)
-        //        generator.prepare()
-        //        generator.impactOccurred()
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.prepare()
+        generator.impactOccurred()
     }
     
     //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -113,41 +116,43 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 0
     }
+    
+    
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
     {
         
-        //        let pageWidht:CGFloat = 200.0 + 30.0
-        //        let currentOffset = scrollView.contentOffset.x
-        //        let targetOffset = CGFloat(targetContentOffset.pointee.x)
-        //        var newTargetOffset:CGFloat = 0.0
-        //
-        //        if targetOffset > currentOffset {
-        //            newTargetOffset = CGFloat(ceilf(Float((currentOffset / pageWidht) * pageWidht)))
-        //        }
-        //        else {
-        //            newTargetOffset = CGFloat(floorf(Float((currentOffset / pageWidht) * pageWidht)))
-        //        }
-        //
-        //        if newTargetOffset < 0.0 {
-        //            newTargetOffset = 0.0
-        //        }
-        //        else if newTargetOffset > scrollView.contentSize.width {
-        //            newTargetOffset = scrollView.contentSize.width
-        //        }
-        //        targetContentOffset.pointee = CGPoint(x: newTargetOffset, y: 0.0)
         
+        //                let pageWidht:CGFloat = 200.0 + 30.0
+        //                let currentOffset = scrollView.contentOffset.x
+        //                let targetOffset = CGFloat(targetContentOffset.pointee.x)
+        //                var newTargetOffset:CGFloat = 0.0
+        //
+        //                if targetOffset > currentOffset {
+        //                    newTargetOffset = CGFloat(ceilf(Float((currentOffset / pageWidht) * pageWidht)))
+        //                }
+        //                else {
+        //                    newTargetOffset = CGFloat(floorf(Float((currentOffset / pageWidht) * pageWidht)))
+        //                }
+        //
+        //                if newTargetOffset < 0.0 {
+        //                    newTargetOffset = 0.0
+        //                }
+        //                else if newTargetOffset > scrollView.contentSize.width {
+        //                    newTargetOffset = scrollView.contentSize.width
+        //                }
+        //                targetContentOffset.pointee = CGPoint(x: newTargetOffset, y: 0.0)
         
-        //interest
         let layout = self.menuCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidth = view.frame.width * 0.75
+        let cellWidthIncludingSpacing = cellWidth + 20
         
-        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
         
         var offset = targetContentOffset.pointee
         
@@ -155,8 +160,39 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let roundedIndex = round(index)
         
-        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing / 1.375 - scrollView.contentInset.right, y: scrollView.contentInset.top)
-        targetContentOffset.pointee = offset
+        //        let visibleWidth = scrollView.bounds.size.width
+        //            - scrollView.contentInset.left
+        //            - scrollView.contentInset.right
+        //
+        //        offset = CGPoint(
+        //            x: roundedIndex * cellWidthIncludingSpacing
+        //                - scrollView.contentInset.left
+        //                + layout.itemSize.width / 2
+        //                - visibleWidth / 2,
+        //            y: -scrollView.contentInset.top
+        //        )
+        
+        //        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left + cellWidthIncludingSpacing / 2 - scrollView.bounds.size.width / 2, y: -scrollView.contentInset.top)
+        // cellwidth : 310,5 - 50
+        print(view.frame.width)
+        print(cellWidth)
+        print(offset.x)
+        print(roundedIndex)
+        print(roundedIndex * cellWidthIncludingSpacing)
+        
+        if roundedIndex == 0{
+            offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - 50, y: scrollView.contentInset.top)
+            targetContentOffset.pointee = offset
+        }
+        if roundedIndex == 1 {
+            offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - 72.5, y: scrollView.contentInset.top)
+            targetContentOffset.pointee = offset
+        }
+        if roundedIndex == 2{
+            offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing, y: scrollView.contentInset.top)
+            targetContentOffset.pointee = offset
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
