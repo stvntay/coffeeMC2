@@ -14,7 +14,6 @@ import Gemini
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-
     
     var menuImageData = "MenuBg"
     var latteImageData = ["HeartLatteMenu", "TulipLatteMenu", "RosettaLatteMenu"]
