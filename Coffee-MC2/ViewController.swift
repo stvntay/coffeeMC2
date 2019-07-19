@@ -147,6 +147,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //                targetContentOffset.pointee = CGPoint(x: newTargetOffset, y: 0.0)
         
         //let layout = self.menuCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        //test
         let cellWidth = view.frame.width * 0.75
         let cellWidthIncludingSpacing = cellWidth + 20
         
