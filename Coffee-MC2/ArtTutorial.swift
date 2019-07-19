@@ -101,6 +101,11 @@ class ArtTutorial: SKScene {
         titleLbl.text = text
     }
     
+    func showAlert(){
+        let alert = UIAlertController(title: "Test", message: "apasih", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//        self.present(alert)
+    }
 }
 
 
