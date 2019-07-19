@@ -38,6 +38,10 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
         UserDefaults.standard.set(true, forKey: "unsetprofile")
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
