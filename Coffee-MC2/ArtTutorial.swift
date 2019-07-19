@@ -33,16 +33,16 @@ class ArtTutorial: SKScene {
 //    var pourMilkJar: SKTexture?
 //    var tiltMilkJar: SKTexture?
     
-    
     override func didMove(to view: SKView) {
         
         self.initialization()
         //startTutorial()
         //startMotion(MotionManager: motionManager!)
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
-        
+     
     }
     
     func initialization(){
@@ -67,7 +67,7 @@ class ArtTutorial: SKScene {
         timerLbl.text = "\(time)"
         
         cup.zPosition = 1
-        milkJar.zPosition = 2
+        milkJar.zPosition = 3
         
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         border.friction = 0

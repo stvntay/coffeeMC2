@@ -24,7 +24,7 @@ struct ModelConstants {
     static let hiddenCellInLength = 200
 }
 
-class ArtController: UIViewController {
+class ArtController: UIViewController{
     //let tulipModel = tulip1()
     var artTutorialScene: ArtTutorial?
     var getArt: String?
@@ -43,10 +43,9 @@ class ArtController: UIViewController {
     var setUndifined: Bool = true
     var currentIndexInPredictionWindow = 0
     let velocity: Double = 20
-    var getXforPath: CGFloat?
-    var getYforPath: CGFloat?
-    var counter :Int = 0
-    
+    var gifView = SKSpriteNode()
+    var textureAtlas = SKTextureAtlas()
+    var textureArray = [SKTexture]()
     
 //    let predictionWindowDataArray = try? MLMultiArray(shape: [1 , ModelConstants.predictionWindowSize , ModelConstants.numOfFeatures] as [NSNumber], dataType: MLMultiArrayDataType.double)
 //    var lastHiddenOutput = try? MLMultiArray(shape:[ModelConstants.hiddenInLength as NSNumber], dataType: MLMultiArrayDataType.double)
@@ -71,9 +70,14 @@ class ArtController: UIViewController {
         // Do any additional setup after loading the view.
         setInit()
         startAcceleration()
+        startAnimateGIF()
         
-        //function animasinya
+        animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 401, height: 401, x: 30, y: Int(-80.807), timePerFrame: 0.08)
      }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
     
     func startTutorial(){
         
@@ -132,8 +136,37 @@ class ArtController: UIViewController {
         startDoStep(x: 0, y: 0)
     }
     
+    func animateGIF(gifFolder: String, gifName: String, width: Int, height: Int, x: Int, y: Int, timePerFrame: TimeInterval) {
+        textureAtlas = SKTextureAtlas(named: gifFolder)
+        
+        for i in 1...textureAtlas.textureNames.count{
+            
+            let names = "\(gifName)_\(i).png"
+            textureArray.append(SKTexture(imageNamed: names))
+            
+        }
+        
+        gifView = SKSpriteNode(imageNamed: textureAtlas.textureNames[0])
+        
+        gifView.size = CGSize(width: width, height: height)
+        gifView.position = CGPoint(x: x, y: y)
+        artTutorialScene?.addChild(gifView)
+        gifView.zPosition = 2
+        
+        gifView.run(SKAction.repeatForever(SKAction.animate(with: textureArray, timePerFrame:  timePerFrame)))
+    }
+    
     func stopAcceleration(){
         motionManager.stopDeviceMotionUpdates()
+    }
+    
+    func startAnimateGIF() {
+//        if setTilt == true && setPour == true {
+//            animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 401, height: 401, x: 30, y: Int(-80.807), timePerFrame: 0.08)
+//
+//        }else{
+//
+//        }
     }
     
     func setInit(){
@@ -164,6 +197,10 @@ class ArtController: UIViewController {
                     let xG = data.gravity.x
                     let yG = data.gravity.y
                     let zG = data.gravity.z
+                    
+                    guard let setFlag = self.setFlag else{
+                        return
+                    }
             
 
                     //tilt pour and undifined position for milk jug
@@ -176,6 +213,7 @@ class ArtController: UIViewController {
                             //print("pour position")
                             artTutorialScene.ChangeMilkJarPosition(milkJarPosition: self.pourMilkJar)
                             self.setMilkJugCondition(tilt: false, pour: true, undifined: false)
+                        
                         }else{
                             //print("undifined gesture")
                             artTutorialScene.ChangeMilkJarPosition(milkJarPosition: self.tiltMilkJar)
