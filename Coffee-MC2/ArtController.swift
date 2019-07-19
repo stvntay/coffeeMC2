@@ -25,7 +25,7 @@ struct ModelConstants {
 }
 
 class ArtController: UIViewController {
-    let tulipModel = tulip1()
+    //let tulipModel = tulip1()
     var artTutorialScene: ArtTutorial?
     var getArt: String?
     var motionManager = CMMotionManager()
