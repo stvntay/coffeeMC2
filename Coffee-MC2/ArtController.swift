@@ -31,7 +31,7 @@ class ArtController: UIViewController{
     var motionManager = CMMotionManager()
     let tiltMilkJar = SKTexture(imageNamed: "Milk Jug (Top)")
     let pourMilkJar = SKTexture(imageNamed: "Milk Jug")
-    var duration: [[Int]] = [[7,10],[6,13]]
+    var duration: [[Int]] = [[0,6,10],[0,6,13]]
     var setFlag: Int?
     var setStep: Int = 0
     var titleArt: [String] = ["Heart Art","Tulip Art"]
@@ -90,10 +90,12 @@ class ArtController: UIViewController{
         
         if time > 0 {
             time -= 1
-            
+ 
         }else{
             timer.invalidate()
             self.timerShow = nil
+            
+            
             //stopAcceleration()
             
             // harus check pake ML
@@ -103,18 +105,29 @@ class ArtController: UIViewController{
             //hasilnya nanti
             if setSuccess{
                 setStep += 1
-                time = duration[setFlag!][setStep]
-                artTutorialScene?.setNotes(text: "You are success to do the first step in the tutorial")
+                if setStep < 3 {
+                    time = duration[setFlag!][setStep]
+                    artTutorialScene?.setNotes(text: "You are success to do the first step in the tutorial")
+                    artTutorialScene?.showAlert(controller: self, titleAlert: "Success", messageAlert: "You success to do the tutorial , continue to the other step")
+                }else{
+                    artTutorialScene?.setNotes(text: "You have done the tutorial")
+                    artTutorialScene?.showAlert(controller: self, titleAlert: "Finished", messageAlert: "You success to do the tutorial , please choose another tutorial to mastering your latte art's skills")
+                    stopAcceleration()
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "mainMenu") as! ViewController
+                    self.present(controller, animated: false, completion: nil)
+                }
+               
             }else{
-                setStep -= 1
+//                setStep -= 1
                 time = duration[setFlag!][setStep]
                 artTutorialScene?.setNotes(text: "You are Failed to do the first step , please try again")
-                
+                 artTutorialScene?.showAlert(controller: self, titleAlert: "Failed", messageAlert: "You failed to do the tutorial , step restarted")
             }
 //            time = duration[0][0]
             
             artTutorialScene?.setPositionY(positionY: -507.734, add: 0)
-            artTutorialScene?.setPositionX(positionX: 0, add: 0)
+            artTutorialScene?.setPositionX(positionX: 35, add: 0)
             artTutorialScene!.setTimerLbl(time: "\(time)")
             artTutorialScene!.ChangeMilkJarPosition(milkJarPosition: tiltMilkJar)
             self.setMilkJugCondition(tilt: false, pour: false, undifined: false)
@@ -189,6 +202,7 @@ class ArtController: UIViewController{
                         return
                     }
             
+
                     //tilt pour and undifined position for milk jug
                         if (yG >= -0.1 && yG <= 0.19) && (zG <= 0.0 && zG >= -1.0) {
                             //print("tilt position")
@@ -219,18 +233,23 @@ class ArtController: UIViewController{
 
     
     func startDoStep(x: CGFloat,y: CGFloat){
+        
         if timerShow == nil{
+            
             if setStep == 0 {
                 if setTilt {
                     setStep += 1
+                    time = duration[setFlag!][setStep]
+                    artTutorialScene!.setTimerLbl(time: "\(time)")
+                    artTutorialScene!.setNotes(text: "Pour your milk jar to start")
                 }
             }else if setStep == 1{
                 if setPour {
                     startTutorial()
-                    
-                    
+                    setSuccess = true
                 }
             }else if setStep == 2{
+                
                 if setPour {
                     startTutorial()
                     
@@ -239,13 +258,15 @@ class ArtController: UIViewController{
         }else{
             artTutorialScene!.setPositionY(positionY: artTutorialScene!.milkJar.position.y, add: y)
             artTutorialScene!.setPositionX(positionX: artTutorialScene!.milkJar.position.x, add: x)
+
         }
         
     }
     
-    func addSampleDataUserAcceleration(sampleX: CGFloat,sampleY: CGFloat,sampleZ: CGFloat){
-        
-    }
+    // for coreMLnya
+//    func addSampleDataUserAcceleration(sampleX: CGFloat,sampleY: CGFloat,sampleZ: CGFloat){
+//
+//    }
     
     func setMilkJugCondition(tilt: Bool , pour: Bool , undifined: Bool){
         setTilt = tilt
@@ -265,5 +286,14 @@ class ArtController: UIViewController{
         } else {
             return .all
         }
+    }
+    
+    func transitionRight(){
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition,forKey: kCATransition)
     }
 }

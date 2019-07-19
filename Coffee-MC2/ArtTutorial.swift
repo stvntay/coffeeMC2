@@ -23,6 +23,9 @@ class ArtTutorial: SKScene {
     var timerLbl = SKLabelNode()
     var tutorialNotes = SKLabelNode()
     var titleLbl = SKLabelNode()
+    var circlePath:SKShapeNode?
+    var circleBezierPath: UIBezierPath?
+    var linePath: UIBezierPath?
     
     var blur = SKSpriteNode()
     var tutorialBackground = SKSpriteNode()
@@ -53,6 +56,7 @@ class ArtTutorial: SKScene {
         tutorialNotes = childNode(withName: "tutorialNotes") as! SKLabelNode
         tutorialBackground = childNode(withName: "tutorialBackground") as! SKSpriteNode
         
+        
 //        pourMilkJar = SKTexture(imageNamed: "Milk Jug")
 //        tiltMilkJar = SKTexture(imageNamed: "Milk Jug (Top)")
         
@@ -73,7 +77,64 @@ class ArtTutorial: SKScene {
         
     }
     
+//    func circularPath(){
+//        circlePath = SKShapeNode(circleOfRadius: 400)
+//        guard let circlePath = self.circlePath else{
+//            return
+//        }
+//
+//        circlePath.zPosition = 4
+//        //circlePath.strokeColor = SKColor.white
+//        self.addChild(circlePath)
+//
+//
+//    }
     
+    func liningPath(startPoint: CGPoint,endPoint: CGPoint){
+        linePath = UIBezierPath()
+        guard let linePath = linePath else{
+            return
+        }
+        linePath.move(to: startPoint)
+        linePath.addLine(to: endPoint)
+        
+    }
+    
+    func removeLiningpPath(){
+        linePath!.removeAllPoints()
+    }
+    
+    func removeCircular(){
+        
+    }
+
+    func followPathCircle(){
+        let circle = UIBezierPath(roundedRect: CGRect(x: (self.frame.width/2) - 200, y: self.frame.midY - 200, width: 400, height: 400), cornerRadius: 200)
+        let circularMove = SKAction.follow(circle.cgPath, asOffset: false, orientToPath: true, duration: 1)
+        milkJar.run( SKAction.repeat(circularMove, count: 6))
+    }
+    
+//    func removeCirclePath(){
+//        guard let circlePath = self.circlePath else{
+//            return
+//        }
+//        self.removeChildren(in: [circlePath])
+//    }
+    
+    func moveLinePath(duration: TimeInterval){
+        guard let linePath = linePath else{
+            return
+        }
+        
+        let move = SKAction.follow(linePath.cgPath, asOffset: true, orientToPath: true, duration: duration)
+        milkJar.run(move)
+        
+    }
+    
+    func setWaitDuration(time: TimeInterval){
+        let wait = SKAction.wait(forDuration: time)
+        milkJar.run(wait)
+    }
     
     func ChangeMilkJarPosition(milkJarPosition : SKTexture){
         milkJar.texture = milkJarPosition
@@ -97,14 +158,15 @@ class ArtTutorial: SKScene {
         tutorialNotes.text = text
     }
     
+    
     func setTitle(text: String){
         titleLbl.text = text
     }
     
-    func showAlert(){
-        let alert = UIAlertController(title: "Test", message: "apasih", preferredStyle: .alert)
+    func showAlert(controller: UIViewController,titleAlert: String , messageAlert: String){
+        let alert = UIAlertController(title: titleAlert, message: messageAlert, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//        self.present(alert)
+        controller.present(alert, animated: true)
     }
 }
 
