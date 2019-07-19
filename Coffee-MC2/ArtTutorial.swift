@@ -75,15 +75,11 @@ class ArtTutorial: SKScene {
     
     
     
-    func ChangeTiltMilkJar(tiltMilkJar : SKTexture){
-        milkJar.texture = tiltMilkJar
+    func ChangeMilkJarPosition(milkJarPosition : SKTexture){
+        milkJar.texture = milkJarPosition
         
     }
-    
-    func ChangePourMilkJar(pourMilkJar: SKTexture){
-        milkJar.texture = pourMilkJar
-    }
-    
+
     func setPositionX(positionX: CGFloat,add: CGFloat){
         milkJar.position.x = positionX + add
     }
@@ -95,6 +91,14 @@ class ArtTutorial: SKScene {
     
     func setTimerLbl(time: String){
         timerLbl.text = time
+    }
+    
+    func setNotes(text: String){
+        tutorialNotes.text = text
+    }
+    
+    func setTitle(text: String){
+        titleLbl.text = text
     }
     
 }

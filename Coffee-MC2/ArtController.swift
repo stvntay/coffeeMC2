@@ -9,13 +9,23 @@
 import UIKit
 import SpriteKit
 import CoreMotion
+import CoreML
 
 struct MotionData{
     var acceleration: (x: String,y: String,z: String)
     var gravity: (x: String,y: String,z: String)
 }
 
+struct ModelConstants {
+    static let numOfFeatures = 2
+    static let predictionWindowSize = 50
+    static let sensorsUpdateInterval = 0.01
+    static let hiddenInLength = 200
+    static let hiddenCellInLength = 200
+}
+
 class ArtController: UIViewController {
+    let tulipModel = tulip1()
     var artTutorialScene: ArtTutorial?
     var getArt: String?
     var motionManager = CMMotionManager()
@@ -31,6 +41,13 @@ class ArtController: UIViewController {
     var setTilt: Bool = false
     var setPour: Bool = false
     var setUndifined: Bool = true
+    var currentIndexInPredictionWindow = 0
+    let velocity: Double = 20
+    
+//    let predictionWindowDataArray = try? MLMultiArray(shape: [1 , ModelConstants.predictionWindowSize , ModelConstants.numOfFeatures] as [NSNumber], dataType: MLMultiArrayDataType.double)
+//    var lastHiddenOutput = try? MLMultiArray(shape:[ModelConstants.hiddenInLength as NSNumber], dataType: MLMultiArrayDataType.double)
+//    var lastHiddenCellOutput = try? MLMultiArray(shape:[ModelConstants.hiddenCellInLength as NSNumber], dataType: MLMultiArrayDataType.double)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +64,10 @@ class ArtController: UIViewController {
             view.ignoresSiblingOrder = true
         }
         
-
         // Do any additional setup after loading the view.
         setInit()
         startAcceleration()
-        startTutorial()
-    }
+     }
     
     func startTutorial(){
         
@@ -69,21 +84,33 @@ class ArtController: UIViewController {
         }else{
             timer.invalidate()
             self.timerShow = nil
-            stopAcceleration()
+            //stopAcceleration()
+            
+            // harus check pake ML
+            
+            
+            
+            //hasilnya nanti
             if setSuccess{
                 setStep += 1
                 time = duration[setFlag!][setStep]
-                
+                artTutorialScene?.setNotes(text: "You are success to do the first step in the tutorial")
             }else{
+                setStep -= 1
                 time = duration[setFlag!][setStep]
+                artTutorialScene?.setNotes(text: "You are Failed to do the first step , please try again")
+                
             }
 //            time = duration[0][0]
             
             artTutorialScene?.setPositionY(positionY: -507.734, add: 0)
             artTutorialScene?.setPositionX(positionX: 0, add: 0)
             artTutorialScene!.setTimerLbl(time: "\(time)")
+            artTutorialScene!.ChangeMilkJarPosition(milkJarPosition: tiltMilkJar)
+            self.setMilkJugCondition(tilt: false, pour: false, undifined: false)
         }
         artTutorialScene!.setTimerLbl(time: "\(time)")
+        startDoStep(x: 0, y: 0)
     }
     
     func stopAcceleration(){
@@ -91,8 +118,10 @@ class ArtController: UIViewController {
     }
     
     func setInit(){
-        time = duration[0][0]
+        
+        time = duration[setFlag!][setStep]
         artTutorialScene!.setTimerLbl(time: "\(time)")
+        artTutorialScene!.setTitle(text: titleArt[setFlag!])
     }
     
     func startAcceleration(){
@@ -104,10 +133,10 @@ class ArtController: UIViewController {
             guard let data = data , error == nil else{
                 return
             }
-            let velocity: Double = 20
+            
         
-                    let positionX = CGFloat(data.userAcceleration.x * velocity  * -1)
-                    let positionY = CGFloat(data.userAcceleration.y * velocity  * -1)
+                    let positionX = CGFloat(data.userAcceleration.x * self.velocity  * -1)
+                    let positionY = CGFloat(data.userAcceleration.y * self.velocity  * -1)
         
         //            let x = Double(String(format: "%.2f", data.gravity.x))
         //            let y = Double(String(format: "%.2f", data.gravity.y))
@@ -121,69 +150,62 @@ class ArtController: UIViewController {
                         return
                     }
                     
-                    //self.time = self.duration[setFlag][self.setStep]
-//                    if self.setFlag == 0 {
-//                        if self.setStep == 0 {
-//                            if self.setTilt{
-//                                self.setStep += 1
-//                            }
-//                        }else if self.setStep == 1{
-//                            if self.setPour{
-//                                self.startTutorial()
-//                            }
-//                        }else{
-//
-//                        }
-//                    }else{
-//                        if self.setStep == 0 {
-//                            if self.setTilt{
-//                                self.setStep += 1
-//                            }
-//                        }else if self.setStep == 1{
-//                            if self.setPour{
-//                                self.startTutorial()
-//                            }
-//                        }else{
-//
-//                        }
-//                    }
-//
+
                     //tilt pour and undifined position for milk jug
                         if (yG >= -0.1 && yG <= 0.19) && (zG <= 0.0 && zG >= -1.0) {
                             //print("tilt position")
-                            artTutorialScene.ChangeTiltMilkJar(tiltMilkJar: self.tiltMilkJar)
+                            artTutorialScene.ChangeMilkJarPosition(milkJarPosition: self.tiltMilkJar)
                             self.setMilkJugCondition(tilt: true, pour: false, undifined: false)
                             
                         }else if (yG >= 0.18 && yG <= 0.95) && (zG  <= -0.3 && zG >= -1.0) {
                             //print("pour position")
-                            artTutorialScene.ChangePourMilkJar(pourMilkJar: self.pourMilkJar)
+                            artTutorialScene.ChangeMilkJarPosition(milkJarPosition: self.pourMilkJar)
                             self.setMilkJugCondition(tilt: false, pour: true, undifined: false)
                         }else{
                             //print("undifined gesture")
-                            artTutorialScene.ChangeTiltMilkJar(tiltMilkJar: self.tiltMilkJar)
+                            artTutorialScene.ChangeMilkJarPosition(milkJarPosition: self.tiltMilkJar)
                             self.setMilkJugCondition(tilt: false, pour: false, undifined: true)
                         }
         
         
                     //last
                     //print("X: \(xG) Y: \(yG) Z: \(zG)")
-                    artTutorialScene.milkJar.position.x += positionX
-                    artTutorialScene.milkJar.position.y += positionY
+            
+            // error karena dijalanin terus
+            self.startDoStep(x: positionX,y: positionY)
                 }
         
     }
     
-    func startDoStep(){
-        if setStep == 0 {
-            if setTilt {
-                setStep += 1
+
+    
+    func startDoStep(x: CGFloat,y: CGFloat){
+        if timerShow == nil{
+            if setStep == 0 {
+                if setTilt {
+                    setStep += 1
+                }
+            }else if setStep == 1{
+                if setPour {
+                    startTutorial()
+                    
+                    
+                }
+            }else if setStep == 2{
+                if setPour {
+                    startTutorial()
+                    
+                }
             }
-        }else if setStep == 1{
-            if setPour {
-                startTutorial()
-                
-            }
+        }else{
+            artTutorialScene!.setPositionY(positionY: artTutorialScene!.milkJar.position.y, add: y)
+            artTutorialScene!.setPositionX(positionX: artTutorialScene!.milkJar.position.x, add: x)
         }
+        
+    }
+    
+    func addSampleDataUserAcceleration(sampleX: CGFloat,sampleY: CGFloat,sampleZ: CGFloat){
+        
     }
     
     func setMilkJugCondition(tilt: Bool , pour: Bool , undifined: Bool){
