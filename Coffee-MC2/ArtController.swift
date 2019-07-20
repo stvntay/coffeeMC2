@@ -72,7 +72,10 @@ class ArtController: UIViewController{
         startAcceleration()
         startAnimateGIF()
         
-        animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 401, height: 401, x: 30, y: Int(-80.807), timePerFrame: 0.08)
+        //MARK: GIF Animation
+//        animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 401, height: 401, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.08)
+//        animateGIF(gifFolder: "TiltGIF", gifName: "tilt", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
+//        animateGIF(gifFolder: "ForwardGIF", gifName: "forward", width: 110, height: 350, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.05)
      }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -136,7 +139,7 @@ class ArtController: UIViewController{
         startDoStep(x: 0, y: 0)
     }
     
-    func animateGIF(gifFolder: String, gifName: String, width: Int, height: Int, x: Int, y: Int, timePerFrame: TimeInterval) {
+    func animateGIF(gifFolder: String, gifName: String, width: Int, height: Int, x: Int, y: Int, z: CGFloat,timePerFrame: TimeInterval) {
         textureAtlas = SKTextureAtlas(named: gifFolder)
         
         for i in 1...textureAtlas.textureNames.count{
@@ -151,7 +154,7 @@ class ArtController: UIViewController{
         gifView.size = CGSize(width: width, height: height)
         gifView.position = CGPoint(x: x, y: y)
         artTutorialScene?.addChild(gifView)
-        gifView.zPosition = 2
+        gifView.zPosition = z
         
         gifView.run(SKAction.repeatForever(SKAction.animate(with: textureArray, timePerFrame:  timePerFrame)))
     }
