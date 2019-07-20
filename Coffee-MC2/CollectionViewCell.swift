@@ -12,18 +12,24 @@ import Gemini
 class CollectionViewCell: GeminiCell{
     
     
-    
     @IBOutlet weak var backgroundMenuView: UIView!
     @IBOutlet weak var cupMenuImage: UIImageView!
     @IBOutlet weak var latteArtMenuTitle: UILabel!
     @IBOutlet weak var latteArtMenuSubtitle: UILabel!
     
     
-    func style(){
-        
+    func style(backgroundColor: UIColor, cornerRadius: CGFloat, maskToBounds: Bool){
+        backgroundMenuView.backgroundColor = backgroundColor
+        backgroundMenuView.layer.cornerRadius = cornerRadius
+        backgroundMenuView.layer.masksToBounds = maskToBounds
     }
     
-    func setCell(imageNamed: String) {
+    func setCellText(title: String, subtitle: String){
+        latteArtMenuTitle.text = title
+        latteArtMenuSubtitle.text = subtitle
+    }
+    
+    func setCellImage(imageNamed: String) {
         cupMenuImage.image = UIImage(named: imageNamed)
     }
     

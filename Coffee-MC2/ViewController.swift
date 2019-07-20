@@ -51,15 +51,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath) as! CollectionViewCell
-        cell.cupMenuImage.image = UIImage(named: latteImageData[indexPath.row])
-        cell.latteArtMenuTitle.text = titleData [indexPath.item]
-        cell.latteArtMenuSubtitle.text = subtitleData[indexPath.item]
-        cell.backgroundMenuView.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
-        cell.backgroundMenuView.layer.cornerRadius = 25
-        cell.backgroundMenuView.layer.masksToBounds = true
-        //        cell.backgroundColor = colors[indexPath.row]
-        cell.style()
-        //        cell.backgroundColor = UIColor.red
+        
+        cell.setCellText(title: titleData[indexPath.item], subtitle: subtitleData[indexPath.item])
+        cell.setCellImage(imageNamed: latteImageData[indexPath.row])
+        // BgColor: #E0D2C6
+        cell.style(backgroundColor: #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1), cornerRadius: 25, maskToBounds: true)
+//        cell.backgroundColor = colors[indexPath.row]
+//        cell.backgroundColor = UIColor.red
         
         //Animate
         self.menuCollectionView.animateCell(cell)
@@ -148,7 +146,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //                }
         //                targetContentOffset.pointee = CGPoint(x: newTargetOffset, y: 0.0)
         
-        let layout = self.menuCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        //let layout = self.menuCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        //test
         let cellWidth = view.frame.width * 0.75
         let cellWidthIncludingSpacing = cellWidth + 20
         
@@ -172,12 +171,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //        )
         
         //        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left + cellWidthIncludingSpacing / 2 - scrollView.bounds.size.width / 2, y: -scrollView.contentInset.top)
+        
         // cellwidth : 310,5 - 50
-        print(view.frame.width)
-        print(cellWidth)
-        print(offset.x)
-        print(roundedIndex)
-        print(roundedIndex * cellWidthIncludingSpacing)
+        
+        //MARK: Checking slide position
+//        print(view.frame.width)
+//        print(cellWidth)
+//        print(offset.x)
+//        print(roundedIndex)
+//        print(roundedIndex * cellWidthIncludingSpacing)
         
         if roundedIndex == 0{
             offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - 50, y: scrollView.contentInset.top)

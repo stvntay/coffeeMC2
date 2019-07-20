@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		30D4C0E7A3C8795FCF313AE7 /* Pods_Coffee_MC2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15F6E351730E0CE47C00E50 /* Pods_Coffee_MC2.framework */; };
+		863CFF8222E247660026D06C /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863CFF8122E247660026D06C /* OnboardingController.swift */; };
+		863CFF8622E24A630026D06C /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863CFF8522E24A630026D06C /* Slide.swift */; };
+		863CFF8822E24ABC0026D06C /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863CFF8722E24ABC0026D06C /* Slide.xib */; };
+		863CFF8A22E256B20026D06C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863CFF8922E256B20026D06C /* Assets.xcassets */; };
 		86A6B1E622DC6501003C9789 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A6B1E522DC6501003C9789 /* AppDelegate.swift */; };
 		86A6B1E822DC6501003C9789 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A6B1E722DC6501003C9789 /* ViewController.swift */; };
 		86A6B1EB22DC6501003C9789 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A6B1E922DC6501003C9789 /* Main.storyboard */; };
-		86A6B1ED22DC6504003C9789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A6B1EC22DC6504003C9789 /* Assets.xcassets */; };
 		86A6B1F022DC6504003C9789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A6B1EE22DC6504003C9789 /* LaunchScreen.storyboard */; };
 		86A6B1F822DC691A003C9789 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A6B1F722DC691A003C9789 /* CollectionViewCell.swift */; };
 		86E6D47722E1FED500ED03E0 /* RotationGIF.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 86E6D47422E1FED400ED03E0 /* RotationGIF.atlas */; };
@@ -26,11 +29,14 @@
 /* Begin PBXFileReference section */
 		62180007E51C231CBD394239 /* Pods-Coffee-MC2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee-MC2.debug.xcconfig"; path = "Target Support Files/Pods-Coffee-MC2/Pods-Coffee-MC2.debug.xcconfig"; sourceTree = "<group>"; };
 		7ADC753988B775A819035166 /* Pods-Coffee-MC2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee-MC2.release.xcconfig"; path = "Target Support Files/Pods-Coffee-MC2/Pods-Coffee-MC2.release.xcconfig"; sourceTree = "<group>"; };
+		863CFF8122E247660026D06C /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		863CFF8522E24A630026D06C /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		863CFF8722E24ABC0026D06C /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		863CFF8922E256B20026D06C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Coffee-MC2/Assets.xcassets"; sourceTree = "<group>"; };
 		86A6B1E222DC6501003C9789 /* Coffee-MC2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee-MC2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A6B1E522DC6501003C9789 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A6B1E722DC6501003C9789 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		86A6B1EA22DC6501003C9789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		86A6B1EC22DC6504003C9789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86A6B1EF22DC6504003C9789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86A6B1F122DC6504003C9789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A6B1F722DC691A003C9789 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				86A6B1E422DC6501003C9789 /* Coffee-MC2 */,
+				863CFF8922E256B20026D06C /* Assets.xcassets */,
 				86A6B1E322DC6501003C9789 /* Products */,
 				B0BF36A722DDF6FF00809C75 /* Frameworks */,
 				50930DA786F30296FBF81F88 /* Pods */,
@@ -93,8 +100,10 @@
 				86A6B1E522DC6501003C9789 /* AppDelegate.swift */,
 				86A6B1E722DC6501003C9789 /* ViewController.swift */,
 				86A6B1E922DC6501003C9789 /* Main.storyboard */,
+				863CFF8122E247660026D06C /* OnboardingController.swift */,
+				863CFF8722E24ABC0026D06C /* Slide.xib */,
+				863CFF8522E24A630026D06C /* Slide.swift */,
 				B0BF36AE22DDF84C00809C75 /* ArtController.swift */,
-				86A6B1EC22DC6504003C9789 /* Assets.xcassets */,
 				86A6B1EE22DC6504003C9789 /* LaunchScreen.storyboard */,
 				86A6B1F122DC6504003C9789 /* Info.plist */,
 				86A6B1F722DC691A003C9789 /* CollectionViewCell.swift */,
@@ -176,9 +185,10 @@
 				B0BF36AD22DDF79600809C75 /* ArtScene.sks in Resources */,
 				86A6B1F022DC6504003C9789 /* LaunchScreen.storyboard in Resources */,
 				86E6D47922E1FED500ED03E0 /* TiltGIF.atlas in Resources */,
+				863CFF8822E24ABC0026D06C /* Slide.xib in Resources */,
 				86E6D47822E1FED500ED03E0 /* ForwardGIF.atlas in Resources */,
-				86A6B1ED22DC6504003C9789 /* Assets.xcassets in Resources */,
 				86E6D47722E1FED500ED03E0 /* RotationGIF.atlas in Resources */,
+				863CFF8A22E256B20026D06C /* Assets.xcassets in Resources */,
 				86A6B1EB22DC6501003C9789 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,7 +244,9 @@
 			files = (
 				B0054FB522E0862500C9A58D /* ArtTutorial.swift in Sources */,
 				86A6B1E822DC6501003C9789 /* ViewController.swift in Sources */,
+				863CFF8222E247660026D06C /* OnboardingController.swift in Sources */,
 				86A6B1E622DC6501003C9789 /* AppDelegate.swift in Sources */,
+				863CFF8622E24A630026D06C /* Slide.swift in Sources */,
 				86A6B1F822DC691A003C9789 /* CollectionViewCell.swift in Sources */,
 				B0BF36AF22DDF84C00809C75 /* ArtController.swift in Sources */,
 			);

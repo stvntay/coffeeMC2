@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Slide" customModule="Coffee_MC2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NPn-em-NWw">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyz-yE-tYh" userLabel="Title">
+                    <rect key="frame" x="0.0" y="512" width="414" height="82"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="82" id="H7A-2W-ySS"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Title">
+                            <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" size="22" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-3U-9Q6" userLabel="Description">
+                    <rect key="frame" x="42" y="602" width="330" height="260"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="260" id="aWe-yE-KRo"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Use this technique to make your slides, create your app, in a simple and effective way ">
+                            <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" metaFont="system" size="15"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-f0-rb9" userLabel="ImageView">
+                    <rect key="frame" x="20" y="64" width="374" height="428"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QDx-f0-rb9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="00B-f4-yaC"/>
+                <constraint firstAttribute="bottom" secondItem="NPn-em-NWw" secondAttribute="bottom" id="0tr-8i-b7W"/>
+                <constraint firstItem="zyz-yE-tYh" firstAttribute="top" secondItem="QDx-f0-rb9" secondAttribute="bottom" constant="20" id="6sK-Bx-Vac"/>
+                <constraint firstItem="NPn-em-NWw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7OB-mV-r2f"/>
+                <constraint firstItem="QDx-f0-rb9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="AkY-dl-1LK"/>
+                <constraint firstItem="zyz-yE-tYh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="JjZ-Se-npe"/>
+                <constraint firstItem="M3Z-3U-9Q6" firstAttribute="top" secondItem="zyz-yE-tYh" secondAttribute="bottom" constant="8" id="ZHk-eV-yrN"/>
+                <constraint firstItem="M3Z-3U-9Q6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="42" id="cch-u0-Zlg"/>
+                <constraint firstItem="M3Z-3U-9Q6" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="dH2-pT-a3E"/>
+                <constraint firstItem="NPn-em-NWw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hWC-AZ-vW8"/>
+                <constraint firstItem="NPn-em-NWw" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="lfF-qN-X8A"/>
+                <constraint firstItem="zyz-yE-tYh" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mVf-sH-aaR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M3Z-3U-9Q6" secondAttribute="trailing" constant="42" id="qax-sC-NaJ"/>
+                <constraint firstItem="QDx-f0-rb9" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-20" id="wa1-6e-EfX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backgroundImage" destination="NPn-em-NWw" id="bce-1F-Udh"/>
+                <outlet property="imageView" destination="QDx-f0-rb9" id="byA-km-a96"/>
+                <outlet property="labelDesc" destination="M3Z-3U-9Q6" id="aYp-tQ-3hO"/>
+                <outlet property="labelTitle" destination="zyz-yE-tYh" id="o8d-aJ-Km2"/>
+            </connections>
+            <point key="canvasLocation" x="123.18840579710145" y="47.544642857142854"/>
+        </view>
+    </objects>
+</document>
