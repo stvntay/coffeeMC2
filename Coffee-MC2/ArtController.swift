@@ -44,9 +44,9 @@ class ArtController: UIViewController{
     var setUndifined: Bool = true
     var currentIndexInPredictionWindow = 0
     let velocity: Double = 20
-    var gifView = SKSpriteNode()
-    var textureAtlas = SKTextureAtlas()
-    var textureArray = [SKTexture]()
+//    var gifView = SKSpriteNode()
+//    var textureAtlas = SKTextureAtlas()
+//    var textureArray = [SKTexture]()
     var setSuccessGravity = false
     var setAnimate = false
     
@@ -81,7 +81,7 @@ class ArtController: UIViewController{
         startAcceleration()
         
 //
-//        animateGIF(gifFolder: "ForwardGIF", gifName: "forward", width: 110, height: 350, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.05)
+//        artTutorialScene?.animateGIF(gifFolder: "ForwardGIF", gifName: "forward", width: 110, height: 350, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.05)
      }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -145,31 +145,31 @@ class ArtController: UIViewController{
 //        startDoStep(x: 0, y: 0)
     }
     
-    func animateGIF(gifFolder: String, gifName: String, width: Int, height: Int, x: Int, y: Int, z: CGFloat,timePerFrame: TimeInterval) {
-        textureAtlas = SKTextureAtlas(named: gifFolder)
-        
-        for i in 1...textureAtlas.textureNames.count{
-            
-            let names = "\(gifName)_\(i).png"
-            textureArray.append(SKTexture(imageNamed: names))
-            
-        }
-        
-        gifView = SKSpriteNode(imageNamed: textureAtlas.textureNames[0])
-        
-        gifView.size = CGSize(width: width, height: height)
-        gifView.position = CGPoint(x: x, y: y)
-        artTutorialScene?.addChild(gifView)
-        gifView.zPosition = z
-        
-        gifView.run(SKAction.repeatForever(SKAction.animate(with: textureArray, timePerFrame:  timePerFrame)))
-    }
+//    func animateGIF(gifFolder: String, gifName: String, width: Int, height: Int, x: Int, y: Int, z: CGFloat,timePerFrame: TimeInterval) {
+//        textureAtlas = SKTextureAtlas(named: gifFolder)
+//
+//        for i in 1...textureAtlas.textureNames.count{
+//
+//            let names = "\(gifName)_\(i).png"
+//            textureArray.append(SKTexture(imageNamed: names))
+//
+//        }
+//
+//        gifView = SKSpriteNode(imageNamed: textureAtlas.textureNames[0])
+//
+//        gifView.size = CGSize(width: width, height: height)
+//        gifView.position = CGPoint(x: x, y: y)
+//        artTutorialScene?.addChild(gifView)
+//        gifView.zPosition = z
+//
+//        gifView.run(SKAction.repeatForever(SKAction.animate(with: textureArray, timePerFrame:  timePerFrame)))
+//    }
     
-    func stopAnimation(){
-        gifView.removeAllActions()
-        artTutorialScene?.removeChildren(in: [gifView])
-        
-    }
+//    func stopAnimation(){
+//        gifView.removeAllActions()
+//        artTutorialScene?.removeChildren(in: [gifView])
+//        
+//    }
     
     func stopAcceleration(){
         motionManager.stopDeviceMotionUpdates()
@@ -359,7 +359,7 @@ class ArtController: UIViewController{
             
             if setStep == 0 {
                 if !setAnimate{
-                    animateGIF(gifFolder: "TiltGIF", gifName: "tilt", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
+                    artTutorialScene?.animateGIF(gifFolder: "TiltGIF", gifName: "tilt", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
                     setAnimate = true
                     print("Step 0 ")
                 }
@@ -374,8 +374,8 @@ class ArtController: UIViewController{
             }else if setStep == 1{
                 if setAnimate {
                     
-                    stopAnimation()
-                    animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
+                    artTutorialScene?.stopAnimation()
+                    artTutorialScene?.animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
                     setAnimate = false
                     print("step 1")
                 }
@@ -387,7 +387,7 @@ class ArtController: UIViewController{
             }else if setStep == 2{
                 
                 if !setAnimate {
-                    stopAnimation()
+                    artTutorialScene?.stopAnimation()
                     
                     //give another animation
                     

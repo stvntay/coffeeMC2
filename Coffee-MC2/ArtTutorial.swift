@@ -26,6 +26,9 @@ class ArtTutorial: SKScene {
     var circlePath:SKShapeNode?
     var circleBezierPath: UIBezierPath?
     var linePath: UIBezierPath?
+    var gifView = SKSpriteNode()
+    var textureAtlas = SKTextureAtlas()
+    var textureArray = [SKTexture]()
     
     var blur = SKSpriteNode()
     var tutorialBackground = SKSpriteNode()
@@ -75,6 +78,31 @@ class ArtTutorial: SKScene {
         
         physicsBody = border
         
+    }
+    
+    func animateGIF(gifFolder: String, gifName: String, width: Int, height: Int, x: Int, y: Int, z: CGFloat,timePerFrame: TimeInterval) {
+        textureAtlas = SKTextureAtlas(named: gifFolder)
+        
+        for i in 1...textureAtlas.textureNames.count{
+            
+            let names = "\(gifName)_\(i).png"
+            textureArray.append(SKTexture(imageNamed: names))
+            
+        }
+        
+        gifView = SKSpriteNode(imageNamed: textureAtlas.textureNames[0])
+        
+        gifView.size = CGSize(width: width, height: height)
+        gifView.position = CGPoint(x: x, y: y)
+        self.addChild(gifView)
+        gifView.zPosition = z
+        
+        gifView.run(SKAction.repeatForever(SKAction.animate(with: textureArray, timePerFrame:  timePerFrame)))
+    }
+    
+    func stopAnimation(){
+        gifView.removeAllActions()
+        self.removeChildren(in: [gifView])
     }
     
 //    func circularPath(){
