@@ -48,6 +48,7 @@ class ArtController: UIViewController{
     var textureAtlas = SKTextureAtlas()
     var textureArray = [SKTexture]()
     var setSuccessGravity = false
+    var setAnimate = false
     
     let tulipModelAcc = tulipAcc()
     let tulipModelGrav = tulipGrav()
@@ -78,11 +79,8 @@ class ArtController: UIViewController{
         // Do any additional setup after loading the view.
         setInit()
         startAcceleration()
-        startAnimateGIF()
         
-        //MARK: GIF Animation
-//        animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 401, height: 401, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.08)
-//        animateGIF(gifFolder: "TiltGIF", gifName: "tilt", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
+//
 //        animateGIF(gifFolder: "ForwardGIF", gifName: "forward", width: 110, height: 350, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.05)
      }
     
@@ -167,18 +165,16 @@ class ArtController: UIViewController{
         gifView.run(SKAction.repeatForever(SKAction.animate(with: textureArray, timePerFrame:  timePerFrame)))
     }
     
+    func stopAnimation(){
+        gifView.removeAllActions()
+        artTutorialScene?.removeChildren(in: [gifView])
+        
+    }
+    
     func stopAcceleration(){
         motionManager.stopDeviceMotionUpdates()
     }
-    
-    func startAnimateGIF() {
-//        if setTilt == true && setPour == true {
-//            animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 401, height: 401, x: 30, y: Int(-80.807), timePerFrame: 0.08)
-//
-//        }else{
-//
-//        }
-    }
+
     
     func setInit(){
         
@@ -362,19 +358,41 @@ class ArtController: UIViewController{
         if timerShow == nil{
             
             if setStep == 0 {
+                if !setAnimate{
+                    animateGIF(gifFolder: "TiltGIF", gifName: "tilt", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
+                    setAnimate = true
+                    print("Step 0 ")
+                }
                 if setTilt {
+                    
+                    
                     setStep += 1
                     time = duration[setFlag!][setStep]
                     artTutorialScene!.setTimerLbl(time: "\(time)")
                     artTutorialScene!.setNotes(text: "Pour your milk jar to start")
                 }
             }else if setStep == 1{
+                if setAnimate {
+                    
+                    stopAnimation()
+                    animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
+                    setAnimate = false
+                    print("step 1")
+                }
+                
                 if setPour {
                     startTutorial()
                     setSuccess = true
                 }
             }else if setStep == 2{
                 
+                if !setAnimate {
+                    stopAnimation()
+                    
+                    //give another animation
+                    
+                    setAnimate = false
+                }
                 if setPour {
                     startTutorial()
                     
