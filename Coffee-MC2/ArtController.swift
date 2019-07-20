@@ -24,6 +24,7 @@ struct ModelConstants {
     static let hiddenCellInLength = 200
 }
 
+
 class ArtController: UIViewController{
     //let tulipModel = tulip1()
     var artTutorialScene: ArtTutorial?
@@ -46,11 +47,18 @@ class ArtController: UIViewController{
     var gifView = SKSpriteNode()
     var textureAtlas = SKTextureAtlas()
     var textureArray = [SKTexture]()
+    var setSuccessGravity = false
     
-//    let predictionWindowDataArray = try? MLMultiArray(shape: [1 , ModelConstants.predictionWindowSize , ModelConstants.numOfFeatures] as [NSNumber], dataType: MLMultiArrayDataType.double)
-//    var lastHiddenOutput = try? MLMultiArray(shape:[ModelConstants.hiddenInLength as NSNumber], dataType: MLMultiArrayDataType.double)
-//    var lastHiddenCellOutput = try? MLMultiArray(shape:[ModelConstants.hiddenCellInLength as NSNumber], dataType: MLMultiArrayDataType.double)
+    let tulipModelAcc = tulipAcc()
+    let tulipModelGrav = tulipGrav()
     
+    let predictionWindowDataArrayAcceleration = try? MLMultiArray(shape: [1 , ModelConstants.predictionWindowSize , ModelConstants.numOfFeatures] as [NSNumber], dataType: MLMultiArrayDataType.double)
+    let predictionWindowDataArrayGravity = try? MLMultiArray(shape: [1 , ModelConstants.predictionWindowSize , ModelConstants.numOfFeatures] as [NSNumber], dataType: MLMultiArrayDataType.double)
+    
+    var lastHiddenOutputAcceleration = try? MLMultiArray(shape:[ModelConstants.hiddenInLength as NSNumber], dataType: MLMultiArrayDataType.double)
+    var lastHiddenOutputGravity = try? MLMultiArray(shape:[ModelConstants.hiddenInLength as NSNumber], dataType: MLMultiArrayDataType.double)
+    var lastHiddenCellOutputAcceleration = try? MLMultiArray(shape:[ModelConstants.hiddenCellInLength as NSNumber], dataType: MLMultiArrayDataType.double)
+    var lastHiddenCellOutputGravity = try? MLMultiArray(shape:[ModelConstants.hiddenCellInLength as NSNumber], dataType: MLMultiArrayDataType.double)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,7 +141,7 @@ class ArtController: UIViewController{
             self.setMilkJugCondition(tilt: false, pour: false, undifined: false)
         }
         artTutorialScene!.setTimerLbl(time: "\(time)")
-        startDoStep(x: 0, y: 0)
+//        startDoStep(x: 0, y: 0)
     }
     
     func animateGIF(gifFolder: String, gifName: String, width: Int, height: Int, x: Int, y: Int, timePerFrame: TimeInterval) {
@@ -201,7 +209,6 @@ class ArtController: UIViewController{
                     guard let setFlag = self.setFlag else{
                         return
                     }
-            
 
                     //tilt pour and undifined position for milk jug
                         if (yG >= -0.1 && yG <= 0.19) && (zG <= 0.0 && zG >= -1.0) {
@@ -226,10 +233,125 @@ class ArtController: UIViewController{
             
             // error karena dijalanin terus
             self.startDoStep(x: positionX,y: positionY)
+            if setFlag == 1{
+                self.setDataGravML(xGrav: xG, yGrav: yG, zGrav: zG)
+                self.setDataAccML(x: data.userAcceleration.x , y: data.userAcceleration.y, z: data.userAcceleration.z)
+            }
+            
                 }
         
     }
     
+    func setDataAccML(x: Double , y: Double , z: Double){
+        if timerShow != nil {
+            guard let dataArray = predictionWindowDataArrayAcceleration else {
+                return
+            }
+            dataArray[[0,currentIndexInPredictionWindow,0] as [NSNumber]] = x as NSNumber
+            dataArray[[0 , currentIndexInPredictionWindow ,1] as [NSNumber]] = y as NSNumber
+            dataArray[[0 , currentIndexInPredictionWindow ,2] as [NSNumber]] = z as NSNumber
+            
+            currentIndexInPredictionWindow += 1
+            
+            if (currentIndexInPredictionWindow == ModelConstants.predictionWindowSize) {
+                let predictedActivity = performModelPredictionAcceleration() ?? "N/A"
+                
+                // Use the predicted activity here
+                // ...
+                
+                if setStep == 1{
+                    if predictedActivity == "Foam Pouring"{
+                        setSuccess = true
+                        print("Gesture Accelerometer step 1 Bener")
+                    }else{
+                        setSuccess = false
+                    }
+                }else if setStep == 2{
+                    if predictedActivity == "Milk Pouring" {
+                        setSuccess = true
+                        print("Gesture Accelerometer step 2 Bener")
+                    }else{
+                        setSuccess = false
+                    }
+                }
+                
+                
+                // Start a new prediction window
+                currentIndexInPredictionWindow = 0
+                
+            }
+        }
+    }
+    
+    func performModelPredictionAcceleration () -> String? {
+        guard let dataArray = predictionWindowDataArrayAcceleration else { return "Error!"}
+        
+        // Perform model prediction
+        let modelPrediction = try? tulipModelAcc.prediction(features: dataArray, hiddenIn: lastHiddenOutputGravity, cellIn: lastHiddenCellOutputGravity)
+        
+        // Update the state vectors
+        lastHiddenOutputGravity = modelPrediction?.hiddenOut
+        lastHiddenCellOutputGravity = modelPrediction?.cellOut
+        
+        // Return the predicted activity - the activity with the highest probability
+        return modelPrediction?.activity
+    }
+    
+    
+    func setDataGravML(xGrav: Double, yGrav: Double, zGrav: Double){
+        if timerShow != nil {
+                guard let dataArray = predictionWindowDataArrayGravity else {
+                    return
+                }
+                dataArray[[0,currentIndexInPredictionWindow,0] as [NSNumber]] = xGrav as NSNumber
+                dataArray[[0 , currentIndexInPredictionWindow ,1] as [NSNumber]] = yGrav as NSNumber
+                dataArray[[0 , currentIndexInPredictionWindow ,2] as [NSNumber]] = zGrav as NSNumber
+                
+                currentIndexInPredictionWindow += 1
+                
+                if (currentIndexInPredictionWindow == ModelConstants.predictionWindowSize) {
+                    let predictedActivity = performModelPredictionGravity() ?? "N/A"
+                    
+                    // Use the predicted activity here
+                    // ...
+                    
+                    if setStep == 1{
+                        if predictedActivity == "Foam Pouring"{
+                            print("Gesture Gravity step 1 Bener")
+                            setSuccessGravity = true
+                        }else{
+                            setSuccessGravity = false
+                        }
+                    }else if setStep == 2{
+                        if predictedActivity == "Milk Pouring" {
+                            setSuccessGravity = true
+                            print("Gesture Gravity step 2 Bener")
+                        }else{
+                            setSuccessGravity = false
+                        }
+                    }
+                    
+                    
+                    // Start a new prediction window
+                    currentIndexInPredictionWindow = 0
+                
+            }
+        }
+    }
+    
+    func performModelPredictionGravity () -> String? {
+        guard let dataArray = predictionWindowDataArrayGravity else { return "Error!"}
+        
+        // Perform model prediction
+        let modelPrediction = try? tulipModelGrav.prediction(features: dataArray, hiddenIn: lastHiddenOutputGravity, cellIn: lastHiddenCellOutputGravity)
+        
+        // Update the state vectors
+        lastHiddenOutputGravity = modelPrediction?.hiddenOut
+        lastHiddenCellOutputGravity = modelPrediction?.cellOut
+        
+        // Return the predicted activity - the activity with the highest probability
+        return modelPrediction?.activity
+    }
 
     
     func startDoStep(x: CGFloat,y: CGFloat){
@@ -258,6 +380,8 @@ class ArtController: UIViewController{
         }else{
             artTutorialScene!.setPositionY(positionY: artTutorialScene!.milkJar.position.y, add: y)
             artTutorialScene!.setPositionX(positionX: artTutorialScene!.milkJar.position.x, add: x)
+            
+           
 
         }
         

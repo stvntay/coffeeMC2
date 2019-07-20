@@ -24,6 +24,10 @@
 		B0BF36A922DDF70000809C75 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BF36A822DDF70000809C75 /* SpriteKit.framework */; };
 		B0BF36AD22DDF79600809C75 /* ArtScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0BF36AC22DDF79600809C75 /* ArtScene.sks */; };
 		B0BF36AF22DDF84C00809C75 /* ArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF36AE22DDF84C00809C75 /* ArtController.swift */; };
+		B0DCB08F22E2C95D000BCB0F /* heartAcc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B0DCB08B22E2C95D000BCB0F /* heartAcc.mlmodel */; };
+		B0DCB09022E2C95D000BCB0F /* tulipGrav.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B0DCB08C22E2C95D000BCB0F /* tulipGrav.mlmodel */; };
+		B0DCB09122E2C95D000BCB0F /* tulipAcc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B0DCB08D22E2C95D000BCB0F /* tulipAcc.mlmodel */; };
+		B0DCB09222E2C95D000BCB0F /* heartGrav.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B0DCB08E22E2C95D000BCB0F /* heartGrav.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		B0BF36A822DDF70000809C75 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		B0BF36AC22DDF79600809C75 /* ArtScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ArtScene.sks; sourceTree = "<group>"; };
 		B0BF36AE22DDF84C00809C75 /* ArtController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtController.swift; sourceTree = "<group>"; };
+		B0DCB08B22E2C95D000BCB0F /* heartAcc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = heartAcc.mlmodel; path = ../../../Desktop/mlmodel/heartAcc.mlmodel; sourceTree = "<group>"; };
+		B0DCB08C22E2C95D000BCB0F /* tulipGrav.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = tulipGrav.mlmodel; path = ../../../Desktop/mlmodel/tulipGrav.mlmodel; sourceTree = "<group>"; };
+		B0DCB08D22E2C95D000BCB0F /* tulipAcc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = tulipAcc.mlmodel; path = ../../../Desktop/mlmodel/tulipAcc.mlmodel; sourceTree = "<group>"; };
+		B0DCB08E22E2C95D000BCB0F /* heartGrav.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = heartGrav.mlmodel; path = ../../../Desktop/mlmodel/heartGrav.mlmodel; sourceTree = "<group>"; };
 		B15F6E351730E0CE47C00E50 /* Pods_Coffee_MC2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffee_MC2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +102,10 @@
 		86A6B1E422DC6501003C9789 /* Coffee-MC2 */ = {
 			isa = PBXGroup;
 			children = (
+				B0DCB08B22E2C95D000BCB0F /* heartAcc.mlmodel */,
+				B0DCB08E22E2C95D000BCB0F /* heartGrav.mlmodel */,
+				B0DCB08D22E2C95D000BCB0F /* tulipAcc.mlmodel */,
+				B0DCB08C22E2C95D000BCB0F /* tulipGrav.mlmodel */,
 				86E6D47522E1FED500ED03E0 /* ForwardGIF.atlas */,
 				86E6D47422E1FED400ED03E0 /* RotationGIF.atlas */,
 				86E6D47622E1FED500ED03E0 /* TiltGIF.atlas */,
@@ -242,12 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0DCB09222E2C95D000BCB0F /* heartGrav.mlmodel in Sources */,
 				B0054FB522E0862500C9A58D /* ArtTutorial.swift in Sources */,
+				B0DCB09122E2C95D000BCB0F /* tulipAcc.mlmodel in Sources */,
 				86A6B1E822DC6501003C9789 /* ViewController.swift in Sources */,
 				863CFF8222E247660026D06C /* OnboardingController.swift in Sources */,
+				B0DCB08F22E2C95D000BCB0F /* heartAcc.mlmodel in Sources */,
 				86A6B1E622DC6501003C9789 /* AppDelegate.swift in Sources */,
 				863CFF8622E24A630026D06C /* Slide.swift in Sources */,
 				86A6B1F822DC691A003C9789 /* CollectionViewCell.swift in Sources */,
+				B0DCB09022E2C95D000BCB0F /* tulipGrav.mlmodel in Sources */,
 				B0BF36AF22DDF84C00809C75 /* ArtController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
