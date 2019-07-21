@@ -91,7 +91,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
         slide5.labelTitle.text = "A real-life bear"
         slide5.labelDesc.text = "Did you know that Winnie the chubby little cubby was based on a real, young bear in London"
         
-        return [slide1, slide3, slide2]
+        return [slide1, slide2, slide3]
     }
     
     
