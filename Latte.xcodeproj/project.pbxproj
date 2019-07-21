@@ -36,7 +36,7 @@
 		863CFF8722E24ABC0026D06C /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		863CFF8922E256B20026D06C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Coffee-MC2/Assets.xcassets"; sourceTree = "<group>"; };
 		863CFF8B22E2DDE70026D06C /* TiltGIF.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TiltGIF.atlas; sourceTree = "<group>"; };
-		86A6B1E222DC6501003C9789 /* Coffee-MC2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee-MC2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86A6B1E222DC6501003C9789 /* Latte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Latte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A6B1E522DC6501003C9789 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A6B1E722DC6501003C9789 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		86A6B1EA22DC6501003C9789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		86A6B1E322DC6501003C9789 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86A6B1E222DC6501003C9789 /* Coffee-MC2.app */,
+				86A6B1E222DC6501003C9789 /* Latte.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,9 +128,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86A6B1E122DC6501003C9789 /* Coffee-MC2 */ = {
+		86A6B1E122DC6501003C9789 /* Latte */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86A6B1F422DC6504003C9789 /* Build configuration list for PBXNativeTarget "Coffee-MC2" */;
+			buildConfigurationList = 86A6B1F422DC6504003C9789 /* Build configuration list for PBXNativeTarget "Latte" */;
 			buildPhases = (
 				71CCC4E68C17E06DDD8D88D9 /* [CP] Check Pods Manifest.lock */,
 				86A6B1DE22DC6501003C9789 /* Sources */,
@@ -142,9 +142,9 @@
 			);
 			dependencies = (
 			);
-			name = "Coffee-MC2";
+			name = Latte;
 			productName = "Coffee-MC2";
-			productReference = 86A6B1E222DC6501003C9789 /* Coffee-MC2.app */;
+			productReference = 86A6B1E222DC6501003C9789 /* Latte.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -162,7 +162,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86A6B1DD22DC6501003C9789 /* Build configuration list for PBXProject "Coffee-MC2" */;
+			buildConfigurationList = 86A6B1DD22DC6501003C9789 /* Build configuration list for PBXProject "Latte" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -175,7 +175,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86A6B1E122DC6501003C9789 /* Coffee-MC2 */,
+				86A6B1E122DC6501003C9789 /* Latte */,
 			);
 		};
 /* End PBXProject section */
@@ -435,7 +435,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86A6B1DD22DC6501003C9789 /* Build configuration list for PBXProject "Coffee-MC2" */ = {
+		86A6B1DD22DC6501003C9789 /* Build configuration list for PBXProject "Latte" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86A6B1F222DC6504003C9789 /* Debug */,
@@ -444,7 +444,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86A6B1F422DC6504003C9789 /* Build configuration list for PBXNativeTarget "Coffee-MC2" */ = {
+		86A6B1F422DC6504003C9789 /* Build configuration list for PBXNativeTarget "Latte" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86A6B1F522DC6504003C9789 /* Debug */,

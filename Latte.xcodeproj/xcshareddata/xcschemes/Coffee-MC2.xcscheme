@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "86A6B1E122DC6501003C9789"
-               BuildableName = "Coffee-MC2.app"
-               BlueprintName = "Coffee-MC2"
-               ReferencedContainer = "container:Coffee-MC2.xcodeproj">
+               BuildableName = "Latte.app"
+               BlueprintName = "Latte"
+               ReferencedContainer = "container:Latte.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86A6B1E122DC6501003C9789"
-            BuildableName = "Coffee-MC2.app"
-            BlueprintName = "Coffee-MC2"
-            ReferencedContainer = "container:Coffee-MC2.xcodeproj">
+            BuildableName = "Latte.app"
+            BlueprintName = "Latte"
+            ReferencedContainer = "container:Latte.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86A6B1E122DC6501003C9789"
-            BuildableName = "Coffee-MC2.app"
-            BlueprintName = "Coffee-MC2"
-            ReferencedContainer = "container:Coffee-MC2.xcodeproj">
+            BuildableName = "Latte.app"
+            BlueprintName = "Latte"
+            ReferencedContainer = "container:Latte.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86A6B1E122DC6501003C9789"
-            BuildableName = "Coffee-MC2.app"
-            BlueprintName = "Coffee-MC2"
-            ReferencedContainer = "container:Coffee-MC2.xcodeproj">
+            BuildableName = "Latte.app"
+            BlueprintName = "Latte"
+            ReferencedContainer = "container:Latte.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
