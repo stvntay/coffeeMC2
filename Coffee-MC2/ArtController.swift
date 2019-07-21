@@ -80,10 +80,8 @@ class ArtController: UIViewController{
         setInit()
         startAcceleration()
         
-        //MARK: Forward GIF
+//
 //        artTutorialScene?.animateGIF(gifFolder: "ForwardGIF", gifName: "forward", width: 110, height: 350, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.05)
-        //MARK: Tulip GIF
-//        artTutorialScene?.animateGIF(gifFolder: "TulipGIF", gifName: "Tulip", width: 110, height: 350, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.05)
      }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{

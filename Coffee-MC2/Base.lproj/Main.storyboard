@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hKb-0V-hBi">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -151,7 +151,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqw-SN-RdB">
-                                <rect key="frame" x="125.5" y="738" width="163" height="42"/>
+                                <rect key="frame" x="130" y="738" width="154" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="XBw-IT-Xlq"/>
@@ -167,7 +167,7 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="j8I-Jc-I14">
                                 <rect key="frame" x="179.5" y="800" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="currentPageIndicatorTintColor" red="0.93725490196078431" green="0.89803921568627454" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.93800404579640073" green="0.9549206369191513" blue="0.9553178720118185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8D-Sl-KZ7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -177,8 +177,8 @@
                         <constraints>
                             <constraint firstItem="v8D-Sl-KZ7" firstAttribute="trailing" secondItem="FsJ-ac-Rpi" secondAttribute="trailing" id="0qF-t4-ava"/>
                             <constraint firstItem="v8D-Sl-KZ7" firstAttribute="top" secondItem="Oky-4H-EEc" secondAttribute="top" id="1uy-dr-BDx"/>
-                            <constraint firstItem="Gqw-SN-RdB" firstAttribute="leading" secondItem="FsJ-ac-Rpi" secondAttribute="leading" constant="125.5" id="BAi-eS-MoI"/>
-                            <constraint firstItem="FsJ-ac-Rpi" firstAttribute="trailing" secondItem="Gqw-SN-RdB" secondAttribute="trailing" constant="125.5" id="FQV-Vi-uof"/>
+                            <constraint firstItem="Gqw-SN-RdB" firstAttribute="leading" secondItem="FsJ-ac-Rpi" secondAttribute="leading" constant="130" id="BAi-eS-MoI"/>
+                            <constraint firstItem="FsJ-ac-Rpi" firstAttribute="trailing" secondItem="Gqw-SN-RdB" secondAttribute="trailing" constant="130" id="FQV-Vi-uof"/>
                             <constraint firstItem="Gqw-SN-RdB" firstAttribute="centerX" secondItem="j8I-Jc-I14" secondAttribute="centerX" id="OwF-dQ-ixE"/>
                             <constraint firstItem="FsJ-ac-Rpi" firstAttribute="bottom" secondItem="j8I-Jc-I14" secondAttribute="bottom" constant="25" id="Tnm-Hm-s6E"/>
                             <constraint firstAttribute="bottom" secondItem="v8D-Sl-KZ7" secondAttribute="bottom" id="VX9-mT-mCn"/>

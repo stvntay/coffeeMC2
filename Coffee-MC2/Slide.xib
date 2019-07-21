@@ -54,16 +54,16 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-f0-rb9" userLabel="ImageView">
-                    <rect key="frame" x="20" y="64" width="374" height="428"/>
+                    <rect key="frame" x="30" y="74" width="354" height="418"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="QDx-f0-rb9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="00B-f4-yaC"/>
+                <constraint firstItem="QDx-f0-rb9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="00B-f4-yaC"/>
                 <constraint firstAttribute="bottom" secondItem="NPn-em-NWw" secondAttribute="bottom" id="0tr-8i-b7W"/>
                 <constraint firstItem="zyz-yE-tYh" firstAttribute="top" secondItem="QDx-f0-rb9" secondAttribute="bottom" constant="20" id="6sK-Bx-Vac"/>
                 <constraint firstItem="NPn-em-NWw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7OB-mV-r2f"/>
-                <constraint firstItem="QDx-f0-rb9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="AkY-dl-1LK"/>
+                <constraint firstItem="QDx-f0-rb9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="AkY-dl-1LK"/>
                 <constraint firstItem="zyz-yE-tYh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="JjZ-Se-npe"/>
                 <constraint firstItem="M3Z-3U-9Q6" firstAttribute="top" secondItem="zyz-yE-tYh" secondAttribute="bottom" constant="8" id="ZHk-eV-yrN"/>
                 <constraint firstItem="M3Z-3U-9Q6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="42" id="cch-u0-Zlg"/>
@@ -72,7 +72,7 @@
                 <constraint firstItem="NPn-em-NWw" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="lfF-qN-X8A"/>
                 <constraint firstItem="zyz-yE-tYh" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mVf-sH-aaR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M3Z-3U-9Q6" secondAttribute="trailing" constant="42" id="qax-sC-NaJ"/>
-                <constraint firstItem="QDx-f0-rb9" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-20" id="wa1-6e-EfX"/>
+                <constraint firstItem="QDx-f0-rb9" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-30" id="wa1-6e-EfX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>

@@ -56,25 +56,27 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
         slide1.labelTitle.font = UIFont.boldSystemFont(ofSize: 35)
         slide1.labelTitle.textColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
         slide1.labelDesc.text = "Learning latte art is a skill that required continuous practice"
-        slide1.labelDesc.font = UIFont.systemFont(ofSize: 20)
+        slide1.labelDesc.font = UIFont.systemFont(ofSize: 23)
         slide1.labelDesc.textColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
         slide1.backgroundImage.image = UIImage(named: "bg")
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide2.imageView.image = UIImage(named: "TulipLatteMenu")
-        slide2.labelTitle.text = "Muscle Memory"
-        slide2.labelTitle.font = UIFont.boldSystemFont(ofSize: 35)
+        slide2.imageView.image = UIImage(named: "OnboardingAsset2")
+        slide2.labelTitle.text = "Choose your latte art"
+        slide2.labelTitle.font = UIFont.boldSystemFont(ofSize: 33)
+        slide2.labelDesc.font = UIFont.systemFont(ofSize: 23)
         slide2.labelTitle.textColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
-        slide2.labelDesc.text = "Latte art involve gestures to make it perfect and it required muscle memory just like when a child first learn to walk"
+        slide2.labelDesc.text = "Learn the steps in making of latte art from easy to hard"
         slide2.labelDesc.textColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
         slide2.backgroundImage.image = UIImage(named: "bg")
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide3.imageView.image = UIImage(named: "RosettaLatteMenu")
+        slide3.imageView.image = UIImage(named: "OnboardingAsset")
         slide3.labelTitle.text = "Learn Latte Art Is Fun!"
-        slide3.labelTitle.font = UIFont.boldSystemFont(ofSize: 28)
+        slide3.labelTitle.font = UIFont.boldSystemFont(ofSize: 30)
+        slide3.labelDesc.font = UIFont.systemFont(ofSize: 20)
         slide3.labelTitle.textColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
-        slide3.labelDesc.text = "Guiding you to learn latte art by gestures with your phone to help you improve muscle memory and have fun with it!" //"Improve your muscle memory for latte art by our guidance for you to learn with various gestures"
+        slide3.labelDesc.text = "Guiding you to learn latte art by motions in your phone to help you get ready and have fun with it!" //"Improve your muscle memory for latte art by our guidance for you to learn with various gestures"
         slide3.labelDesc.textColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
         slide3.backgroundImage.image = UIImage(named: "bg")
         
@@ -89,7 +91,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
         slide5.labelTitle.text = "A real-life bear"
         slide5.labelDesc.text = "Did you know that Winnie the chubby little cubby was based on a real, young bear in London"
         
-        return [slide1, slide2, slide3]
+        return [slide1, slide3, slide2]
     }
     
     
@@ -130,7 +132,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
             nextButton.isHidden = false
         }
         
-        nextButton.layer.cornerRadius = 20
+        nextButton.layer.cornerRadius = 16
         nextButton.layer.masksToBounds = true
         nextButton.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.8235294118, blue: 0.7764705882, alpha: 1)
         
