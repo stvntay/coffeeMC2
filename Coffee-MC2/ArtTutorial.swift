@@ -101,6 +101,7 @@ class ArtTutorial: SKScene {
     }
     
     func stopAnimation(){
+        textureArray = []
         gifView.removeAllActions()
         self.removeChildren(in: [gifView])
     }
@@ -191,10 +192,15 @@ class ArtTutorial: SKScene {
         titleLbl.text = text
     }
     
-    func showAlert(controller: UIViewController,titleAlert: String , messageAlert: String){
+    func showAlert(controller: UIViewController,titleAlert: String , messageAlert: String,handler : @escaping (UIAlertAction)->Void){
         let alert = UIAlertController(title: titleAlert, message: messageAlert, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: handler))
         controller.present(alert, animated: true)
+    }
+    
+    func setCupCondition(cupCondition: SKTexture){
+        cup.texture = cupCondition
     }
 }
 

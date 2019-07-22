@@ -105,7 +105,7 @@ class ArtController: UIViewController{
             self.timerShow = nil
             
             
-            //stopAcceleration()
+            stopAcceleration()
             
             // harus check pake ML
             
@@ -117,21 +117,21 @@ class ArtController: UIViewController{
                 if setStep < 3 {
                     time = duration[setFlag!][setStep]
                     artTutorialScene?.setNotes(text: "You are success to do the first step in the tutorial")
-                    artTutorialScene?.showAlert(controller: self, titleAlert: "Success", messageAlert: "You success to do the tutorial , continue to the other step")
+                    artTutorialScene?.showAlert(controller: self, titleAlert: "Success", messageAlert: "You success to do the tutorial , continue to the other step", handler: successTutorial(action:))
                 }else{
+                    artTutorialScene?.removeChildren(in: [artTutorialScene!.milkJar])
+                    artTutorialScene?.setCupCondition(cupCondition: SKTexture(imageNamed: "Coffee Cup - Latte (Succeed)"))
                     artTutorialScene?.setNotes(text: "You have done the tutorial")
-                    artTutorialScene?.showAlert(controller: self, titleAlert: "Finished", messageAlert: "You success to do the tutorial , please choose another tutorial to mastering your latte art's skills")
+                    artTutorialScene?.showAlert(controller: self, titleAlert: "Finished", messageAlert: "You success to do the tutorial , please choose another tutorial to mastering your latte art's skills", handler: finishedTutorial(action:))
                     stopAcceleration()
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "mainMenu") as! ViewController
-                    self.present(controller, animated: false, completion: nil)
+                    
                 }
                
             }else{
 //                setStep -= 1
                 time = duration[setFlag!][setStep]
                 artTutorialScene?.setNotes(text: "You are Failed to do the first step , please try again")
-                 artTutorialScene?.showAlert(controller: self, titleAlert: "Failed", messageAlert: "You failed to do the tutorial , step restarted")
+                artTutorialScene?.showAlert(controller: self, titleAlert: "Failed", messageAlert: "You failed to do the tutorial , step restarted", handler: successTutorial(action:))
             }
 //            time = duration[0][0]
             
@@ -143,6 +143,16 @@ class ArtController: UIViewController{
         }
         artTutorialScene!.setTimerLbl(time: "\(time)")
 //        startDoStep(x: 0, y: 0)
+    }
+    
+    func successTutorial(action: UIAlertAction){
+        startAcceleration()
+    }
+    
+    func finishedTutorial(action: UIAlertAction){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "mainMenu") as! ViewController
+        self.present(controller, animated: false, completion: nil)
     }
     
 //    func animateGIF(gifFolder: String, gifName: String, width: Int, height: Int, x: Int, y: Int, z: CGFloat,timePerFrame: TimeInterval) {
@@ -359,6 +369,7 @@ class ArtController: UIViewController{
             
             if setStep == 0 {
                 if !setAnimate{
+                    artTutorialScene?.stopAnimation()
                     artTutorialScene?.animateGIF(gifFolder: "TiltGIF", gifName: "tilt", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
                     setAnimate = true
                     print("Step 0 ")
@@ -375,7 +386,7 @@ class ArtController: UIViewController{
                 if setAnimate {
                     
                     artTutorialScene?.stopAnimation()
-                    artTutorialScene?.animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 200, height: 300, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.2)
+                    artTutorialScene?.animateGIF(gifFolder: "RotationGIF", gifName: "rotation", width: 400, height: 400, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.08)
                     setAnimate = false
                     print("step 1")
                 }
@@ -387,7 +398,10 @@ class ArtController: UIViewController{
             }else if setStep == 2{
                 
                 if !setAnimate {
-                    artTutorialScene?.stopAnimation()
+                     artTutorialScene?.stopAnimation()
+                    artTutorialScene?.animateGIF(gifFolder: "TulipGIF", gifName: "tulip", width: 110, height: 350, x: 30, y: Int(-80.807), z: 2, timePerFrame: 0.05)
+                    artTutorialScene?.setCupCondition(cupCondition: SKTexture(imageNamed: "Coffee Cup - Full (Succeed)"))
+                   
                     
                     //give another animation
                     

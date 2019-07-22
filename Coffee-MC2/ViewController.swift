@@ -13,10 +13,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     var menuImageData = "MenuBg"
     var latteImageData = ["HeartLatteMenu", "TulipLatteMenu", "RosettaLatteMenu"]
-    var titleData = ["Heart", "Latte", "Rosetta"]
+    var titleData = ["Heart", "Tulip", "Rosetta"]
     var subtitleData = ["Easy", "Medium", "Hard"]
-    var starFilledData = "StarFilled"
-    var starEmptyData = "StarEmpty"
+//    var starFilledData = "StarFilled"
+//    var starEmptyData = "StarEmpty"
     
     @IBOutlet weak var menuCollectionView: GeminiCollectionView!
     

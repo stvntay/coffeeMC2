@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		30D4C0E7A3C8795FCF313AE7 /* Pods_Coffee_MC2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15F6E351730E0CE47C00E50 /* Pods_Coffee_MC2.framework */; };
 		861B701C22E37A6F0035CCC2 /* TulipGIF.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 861B701B22E37A6F0035CCC2 /* TulipGIF.atlas */; };
+		861B702122E585DE0035CCC2 /* heartGrav.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 861B701D22E585DE0035CCC2 /* heartGrav.mlmodel */; };
+		861B702222E585DE0035CCC2 /* tulipAcc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 861B701E22E585DE0035CCC2 /* tulipAcc.mlmodel */; };
+		861B702322E585DE0035CCC2 /* heartAcc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 861B701F22E585DE0035CCC2 /* heartAcc.mlmodel */; };
+		861B702422E585DE0035CCC2 /* tulipGrav.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 861B702022E585DE0035CCC2 /* tulipGrav.mlmodel */; };
 		863CFF8222E247660026D06C /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863CFF8122E247660026D06C /* OnboardingController.swift */; };
 		863CFF8622E24A630026D06C /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863CFF8522E24A630026D06C /* Slide.swift */; };
 		863CFF8822E24ABC0026D06C /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863CFF8722E24ABC0026D06C /* Slide.xib */; };
@@ -31,6 +35,10 @@
 		62180007E51C231CBD394239 /* Pods-Coffee-MC2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee-MC2.debug.xcconfig"; path = "Target Support Files/Pods-Coffee-MC2/Pods-Coffee-MC2.debug.xcconfig"; sourceTree = "<group>"; };
 		7ADC753988B775A819035166 /* Pods-Coffee-MC2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee-MC2.release.xcconfig"; path = "Target Support Files/Pods-Coffee-MC2/Pods-Coffee-MC2.release.xcconfig"; sourceTree = "<group>"; };
 		861B701B22E37A6F0035CCC2 /* TulipGIF.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TulipGIF.atlas; sourceTree = "<group>"; };
+		861B701D22E585DE0035CCC2 /* heartGrav.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = heartGrav.mlmodel; sourceTree = "<group>"; };
+		861B701E22E585DE0035CCC2 /* tulipAcc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = tulipAcc.mlmodel; sourceTree = "<group>"; };
+		861B701F22E585DE0035CCC2 /* heartAcc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = heartAcc.mlmodel; sourceTree = "<group>"; };
+		861B702022E585DE0035CCC2 /* tulipGrav.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = tulipGrav.mlmodel; sourceTree = "<group>"; };
 		863CFF8122E247660026D06C /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		863CFF8522E24A630026D06C /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		863CFF8722E24ABC0026D06C /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
@@ -96,6 +104,10 @@
 		86A6B1E422DC6501003C9789 /* Coffee-MC2 */ = {
 			isa = PBXGroup;
 			children = (
+				861B701F22E585DE0035CCC2 /* heartAcc.mlmodel */,
+				861B701D22E585DE0035CCC2 /* heartGrav.mlmodel */,
+				861B701E22E585DE0035CCC2 /* tulipAcc.mlmodel */,
+				861B702022E585DE0035CCC2 /* tulipGrav.mlmodel */,
 				86E6D47522E1FED500ED03E0 /* ForwardGIF.atlas */,
 				86E6D47422E1FED400ED03E0 /* RotationGIF.atlas */,
 				863CFF8B22E2DDE70026D06C /* TiltGIF.atlas */,
@@ -247,10 +259,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0054FB522E0862500C9A58D /* ArtTutorial.swift in Sources */,
+				861B702322E585DE0035CCC2 /* heartAcc.mlmodel in Sources */,
 				86A6B1E822DC6501003C9789 /* ViewController.swift in Sources */,
+				861B702422E585DE0035CCC2 /* tulipGrav.mlmodel in Sources */,
 				863CFF8222E247660026D06C /* OnboardingController.swift in Sources */,
 				86A6B1E622DC6501003C9789 /* AppDelegate.swift in Sources */,
+				861B702222E585DE0035CCC2 /* tulipAcc.mlmodel in Sources */,
 				863CFF8622E24A630026D06C /* Slide.swift in Sources */,
+				861B702122E585DE0035CCC2 /* heartGrav.mlmodel in Sources */,
 				86A6B1F822DC691A003C9789 /* CollectionViewCell.swift in Sources */,
 				B0BF36AF22DDF84C00809C75 /* ArtController.swift in Sources */,
 			);
